@@ -1,12 +1,14 @@
 body {
     height: 250vh;
-    margin: 0 auto;
     font-family: 'Lora', serif;
     background-image: url(trianglify.png);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+}
+.pagewrap {
+    margin:1px;
 }
 h3 {
     left: 50%;
@@ -16,7 +18,7 @@ h3 {
     font-family: 'Montserrat', sans-serif;
     border-bottom: 5px solid black;
     padding-bottom: 5px;
-    position: fixed;
+    position: absolute;
 }
 .img1 {
     margin-top: 25%;
@@ -58,42 +60,41 @@ h3 {
     flex-flow: wrap;
     height: 500px;
     position: relative;
-    background-color: #ffffff;
-    padding: 10px;
 }
 
 .projectwrapper .img3,.projectwrapper .img4,.projectwrapper .img5,.projectwrapper .img6,.projectwrapper .img7, .projectwrapper .img8 {
     height: auto;
-    max-height: 100%;
+    max-height: 33%;
     width: 200px;
     max-width: 45%;
     background-color: lightgrey;
     margin: 2px;
     box-shadow: 0px 0px 2px 0px
 }
-.projectwrapper .img3:hover,.projectwrapper .img6:hover {
+.projectwrapper .img3:hover,.projectwrapper .img5:hover,.projectwrapper .img7:hover {
     z-index: 5;
     max-width:100%;
     transform: scale(1.5);
     transform-origin: left 2%;
 }
-.projectwrapper .img5:hover,.projectwrapper .img8:hover {
+.projectwrapper .img4:hover,.projectwrapper .img6:hover,.projectwrapper .img8:hover {
     z-index: 5;
     max-width:100%;
     transform: scale(1.5);
     transform-origin: right 2%;
 }
-.projectwrapper .img4:hover {
+/* .projectwrapper .img4:hover {
         z-index: 5;
         max-width:100%;
         transform: scale(1.95);
-        transform-origin: top 2%;
-}
-.projectwrapper .img7:hover {
+        transform-origin: left 2%;
+} */
+/* .projectwrapper .img7:hover {
     z-index: 5;
     max-width:100%;
     transform: scale(1.95);
-}
+    transform-origin: right 2%;
+} */
 .contactsection {
     background-color: rgb(255, 160, 35);
     z-index: 3;
@@ -134,5 +135,23 @@ h3 {
         max-width: 45%;
         background-color: lightgrey;
         margin: 1px;
+    }
+    .projectwrapper .img4:hover,.projectwrapper .img6:hover {
+        z-index: 5;
+        max-width:100%;
+        transform: scale(1.5);
+        transform-origin: bottom;
+    }
+    .projectwrapper .img3:hover,.projectwrapper .img6:hover {
+        z-index: 5;
+        max-width:100%;
+        transform: scale(1.5);
+        transform-origin: left 2%;
+    }
+    .projectwrapper .img5:hover,.projectwrapper .img8:hover {
+        z-index: 5;
+        max-width:100%;
+        transform: scale(1.5);
+        transform-origin: right 2%;
     }
 }
