@@ -43,9 +43,10 @@ h3 {
     top: 5px;
     padding: 10px 0px;
 }
-.titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
+h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
 .contactsection h4:nth-child(1) {
     font-family: 'Montserrat', sans-serif;
+    font-size: 20px;
 }
 .aboutsection {
     background-color: rgb(255, 185, 93);
@@ -71,7 +72,7 @@ h3 {
     margin: 2px;
     box-shadow: 0px 0px 2px 0px
 }
-.projectwrapper .img3:hover,.projectwrapper .img5:hover,.projectwrapper .img7:hover {
+.projectwrapper .img3:hover,.projectwrapper .img5:hover, .projectwrapper .img7:hover {
     z-index: 5;
     max-width:100%;
     transform: scale(1.5);
@@ -136,7 +137,7 @@ h3 {
         background-color: lightgrey;
         margin: 1px;
     }
-    .projectwrapper .img4:hover,.projectwrapper .img6:hover {
+    .projectwrapper .img4:hover,.projectwrapper .img7:hover {
         z-index: 5;
         max-width:100%;
         transform: scale(1.5);
