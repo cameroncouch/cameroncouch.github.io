@@ -1,5 +1,6 @@
 body {
     height: 250vh;
+    margin: 0 auto;
     font-family: 'Lora', serif;
     background-image: url(trianglify.png);
     background-attachment: fixed;
@@ -19,6 +20,9 @@ h3 {
     border-bottom: 5px solid black;
     padding-bottom: 5px;
     position: absolute;
+}
+h4, p {
+    margin-left: 2%;
 }
 .img1 {
     margin-top: 25%;
