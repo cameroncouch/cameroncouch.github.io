@@ -2,7 +2,7 @@ body {
     height: 250vh;
     margin: 0 auto;
     font-family: 'Lora', serif;
-    background-image: url(trianglify.png);
+    background-image: url(trianglify.svg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -11,13 +11,19 @@ body {
 .pagewrap {
     margin:1px;
 }
+.biglogo {
+    height: 25%;
+    width: 25%;
+    margin: 0px
+}
 h3 {
+    text-align: -webkit-center;
     left: 50%;
     top: 5%;
     transform: translate(-50%, -50%);
     font-size: 24px;
     font-family: 'Montserrat', sans-serif;
-    border-bottom: 5px solid black;
+    /* border-bottom: 5px solid black; */
     padding-bottom: 5px;
     position: absolute;
 }
@@ -40,7 +46,7 @@ h4, p {
     top: 5px;
 }
 .titlesection {
-    background-color: rgb(255, 246, 218);
+    background-color: rgba(255,255,255,.5);
     z-index: 3;
     height: auto;
     position: relative;
@@ -53,7 +59,7 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
     font-size: 20px;
 }
 .aboutsection {
-    background-color: rgb(255, 185, 93);
+    background-color: rgba(255,255,255,.5);
     z-index: 3;
     position: relative;
     padding: 10px 0px;
@@ -101,7 +107,7 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
     transform-origin: right 2%;
 } */
 .contactsection {
-    background-color: rgb(255, 160, 35);
+    background-color: rgba(255,255,255,.5);;
     z-index: 3;
     position: relative;
     padding: 30px 0px;
@@ -122,6 +128,9 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
     body {
         height: 300vh;
         margin: 0 auto;
+    }
+    h3 {
+        font-size: 60px;
     }
     .projectwrapper {
         /* z-index: 3; */
