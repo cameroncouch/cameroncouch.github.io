@@ -1,7 +1,7 @@
 body {
     height: 250vh;
     margin: 0 auto;
-    font-family: 'Lora', serif;
+    font-family: 'Overpass', sans-serif;
     background-image: url(trianglify.svg);
     background-attachment: fixed;
     background-position: center;
