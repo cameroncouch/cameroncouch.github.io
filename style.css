@@ -1,15 +1,15 @@
+* {
+  box-sizing:border-box
+}
 body {
-    height: 250vh;
+    height: 175vh;
     margin: 0 auto;
     font-family: 'Overpass', sans-serif;
-    background-image: url(trianglify.svg);
+    background-image: url(./assets/trianglify.svg);
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-}
-.pagewrap {
-    margin:1px;
 }
 .biglogo {
     height: 25%;
@@ -21,20 +21,26 @@ h3 {
     left: 50%;
     top: 5%;
     transform: translate(-50%, -50%);
-    font-size: 24px;
+    font-size: 1.5em;
     font-family: 'Montserrat', sans-serif;
     /* border-bottom: 5px solid black; */
     padding-bottom: 5px;
     position: absolute;
 }
-h4, p {
+h4 {
     margin-left: 2%;
 }
+.titlesection p, .aboutsection p {
+    position: relative;
+    background: rgba(255,255,255,1);
+    padding: 20px;
+    border-bottom: 2px solid #3c3c3c;
+    bottom: 98px;
+    z-index: 5;
+}
 .img1 {
-    margin-top: 25%;
     height: auto;
     position: relative;
-    top: 10px;
     max-width: 100%;
     z-index: 1;
 }
@@ -43,32 +49,34 @@ h4, p {
     max-width: 100%;
     position: relative;
     z-index: 1;
-    top: 5px;
-}
-.titlesection {
-    background-color: rgba(255,255,255,.5);
-    z-index: 3;
-    height: auto;
-    position: relative;
-    top: 5px;
-    padding: 10px 0px;
 }
 h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
 .contactsection h4:nth-child(1) {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1em;
+  background: rgba(255,255,255,1);
+  padding: 20px;
+  margin: 0;
 }
-.aboutsection {
-    background-color: rgba(255,255,255,.5);
-    z-index: 3;
-    position: relative;
-    padding: 10px 0px;
+section .titlesection {
+  margin-top: 25%;
 }
-* {box-sizing:border-box}
-
+section .titlesection, section .aboutsection {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(255,255,255,.8);
+  border-top: 2px solid #3c3c3c;
+  z-index: 3;
+  position: relative;
+}
 .portfolio {
     width: 100%;
     max-height: 264px
+}
+.workssection {
+  background: rgba(0,0,0,.6);
+  border-top: 2px solid #3c3c3c;
+  border-bottom: 2px solid #3c3c3c;
 }
 /* Slideshow container */
 .slideshow-container {
@@ -76,12 +84,10 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
   position: relative;
   margin: auto;
 }
-
 /* Hide the images by default */
 .mySlides {
   display: none;
 }
-
 /* Next & previous buttons */
 .prev, .next {
   cursor: pointer;
@@ -97,18 +103,15 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
   border-radius: 0 3px 3px 0;
   user-select: none;
 }
-
 /* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
-
 /* On hover, add a black background color with a little bit see-through */
 .prev:hover, .next:hover {
   background-color: rgba(0,0,0,0.8);
 }
-
 /* Caption text */
 .text {
   background-color: rgba(0,0,0,.8);
@@ -120,19 +123,21 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
   width: 100%;
   text-align: center;
 }
-
 /* Number text (1/3 etc) */
 .numbertext {
-  filter: invert(50%);
+  background: rgba(0,0,0,.6);
+  color: #fff;
   font-weight: 700;
   font-size: 12px;
   padding: 8px 12px;
   position: absolute;
-  top: 1%;
-  left: 85%;
+  top: 0;
+  right: 0;
 }
-
 /* The dots/bullets/indicators */
+.slideshow-dot-container {
+  text-align:center
+}
 .dot {
   cursor: pointer;
   height: 15px;
@@ -143,11 +148,9 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
   display: inline-block;
   transition: background-color 0.6s ease;
 }
-
 .active, .dot:hover {
   background-color: #717171;
 }
-
 /* Fading animation */
 .fade {
   -webkit-animation-name: fade;
@@ -155,22 +158,22 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
   animation-name: fade;
   animation-duration: 1.5s;
 }
-
 @-webkit-keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
-
 @keyframes fade {
   from {opacity: .4} 
   to {opacity: 1}
 }
 .contactsection {
-    background-color: rgba(255,255,255,.5);;
-    z-index: 3;
-    position: relative;
-    padding: 30px 0px;
-    text-align: center;
+  background-color: rgba(255,255,255,1);
+  z-index: 3;
+  position: relative;
+  padding: 30px 0px;
+  text-align: center;
+  border-top: 2px solid #3c3c3c;
+  border-bottom: 2px solid #3c3c3c;
 }
 .contactsection a {
     font-family: 'Montserrat', sans-serif;
@@ -181,7 +184,7 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
     color: black;
 }
 .contactsection a:hover {
-    color: white;
+    color: rgb(156, 52, 177);
 }
 @media only screen and (min-width:750px) {
     body {
@@ -189,7 +192,7 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
         margin: 0 auto;
     }
     h3 {
-        font-size: 60px;
+        font-size: 3em;
     }
     .portfolio {
         width: 100%;
@@ -197,12 +200,13 @@ h4, .titlesection h4:nth-child(1),.aboutsection h4:nth-child(1),
         max-height: 650px;
     }
     .numbertext {
-        filter: invert(50%);
+        background: rgba(0,0,0,.6);
+        color: #fff;
         font-weight: 700;
         font-size: 12px;
         padding: 8px 12px;
         position: absolute;
-        top: 1%;
-        left: 90%;
+        top: 0;
+        right: 0;
       }
 }
