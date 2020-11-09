@@ -116,10 +116,9 @@ section .titlesection, section .aboutsection {
 .text {
   background-color: rgba(0,0,0,.8);
   color: #fff;
-  font-size: 15px;
+  font-size: .75em;
   padding: 8px 12px;
-  bottom: 10%;
-  position: absolute;
+  position: relative;
   width: 100%;
   text-align: center;
 }
@@ -136,7 +135,8 @@ section .titlesection, section .aboutsection {
 }
 /* The dots/bullets/indicators */
 .slideshow-dot-container {
-  text-align:center
+  text-align:center;
+  padding-top: 2%;
 }
 .dot {
   cursor: pointer;
