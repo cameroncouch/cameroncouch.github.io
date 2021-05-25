@@ -50,7 +50,9 @@ const gridLi = document.querySelectorAll("li[class*='nav-li']");
  */
 const updateView = function (evt) {
     const evtType = evt.type;
-    let p = document.createElement('p'); p.innerText = evtType; document.appendChild(p);
+    let p = document.createElement('p'); 
+    p.innerText = evtType; 
+    document.body.appendChild(p);
     const key = evt.type === 'keydown' ? evt.code : '';
     if (!key && typeof this != undefined && this.value.toString() === sectionWrapper.lastClicked) {
         return;
