@@ -6,99 +6,39 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.11.0/devicon.min.css">
   <link href="https://fonts.googleapis.com/css?family=Overpass|Montserrat" rel="stylesheet">
   <link rel="icon" type="image/jpg" sizes="64x64" href="./assets/lilcamlogo.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/camlogo.jpg">
-  <title>cam|couch</title>
+  <title>cam couch</title>
 </head>
 
 <body>
-  <section class="pagewrap">
-    <h3>cam<img class="biglogo" src="./assets/biglogo.png">couch</h3>
-    <section class="titlesection">
-      <h4>my story so far</h4>
-      <img title="Portrait photograph of Cam Couch" aria-label="Portrait photograph of Cam Couch" class="img1"
-        src="./assets/IMG_5930.jpg">
-      <p>I am a resourceful, driven, and passionate leader. In 2019 I began my career track in technology. Over the
-        course of +10 years I lead teams of varying sizes, solved problems, and exceeded profit goals for a large
-        organization. In my current role as a developer with Verint | ForeSee, I design, develop and maintain process
-        improvement tools for internal and external customers.</p>
+  <header>
+    <nav>
+      <ul id="nav-ul">
+        <li value="0" id="first-li" class="nav-li">ABOUT</li>
+        <li value="1" id="second-li" class="nav-li desaturate">PROJECTS</li>
+        <li value="2" id="third-li" class="nav-li desaturate">OTHER</li>
+      </ul>
+    </nav>
+  </header>
+  <div id="section-wrapper" class="one-vis">
+    <section id="first-section" class="visible">
+      <h1>Heading 1</h1>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo excepturi. Perspiciatis delectus ipsum alias voluptatum nostrum vitae nulla magni quidem, ex corporis doloremque, neque ab tenetur porro, culpa dolores!</p>
     </section>
-
-    <section class="aboutsection">
-      <h4>my skills</h4>
-      <img class="img2" title="Photograph of a coder on a laptop" aria-label="Photograph of a coder on a laptop"
-        src="./assets/IMG_5962.jpg">
-      <p>I am proficient in JavaScript, HTML, and CSS. Additionally, I have experience with Python, Node.js, AngularJS,
-        Angular, React, Typescript, Batch, and PL/SQL.</p>
+    <section id="second-section" class="hide">
+      <h1>Heading 2</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero esse, deserunt, consectetur cumque quam numquam pariatur, culpa officiis doloremque qui consequatur quisquam! Tempora expedita, esse at distinctio obcaecati quaerat.</p>
     </section>
-    <!-- Slideshow container -->
-    <section class="workssection">
-      <h4>example work</h4>
-      <section class="slideshow-container">
-        <!-- Full-width images with number and caption text -->
-        <div class="mySlides fade">
-          <div class="numbertext">1 / 5</div>
-          <img class=portfolio title="A web application that depicts campsites on a map of Michigan"
-            aria-label="A web application that depicts campsites on a map of Michigan" src="./assets/camp.png">
-          <div class="text">A full stack application that maps location data from a postgreSQL db. Uses HTML, CSS,
-            AngularJS, node.js, postgreSQL</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">2 / 5</div>
-          <img class=portfolio title="A memory matching game that is themed around the City of Detroit, MI"
-            aria-label="A memory matching game that is themed around the City of Detroit, MI"
-            src="./assets/matchgame.PNG">
-          <div class="text">A memory matching game using HTML, CSS, and jQuery</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">3 / 5</div>
-          <img class=portfolio title="A multiple-choice quiz game with animal-themed questions"
-            aria-label="A multiple-choice quiz game with animal-themed questions" src="./assets/quiz.PNG">
-          <div class="text">A quiz game using HTML, CSS, AngularJS, and postgreSQL</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">4 / 5</div>
-          <img class=portfolio title="A site that allows users to search for recipes using keywords"
-            aria-label="A site that allows users to search for recipes using keywords" src="./assets/recipe.PNG">
-          <div class="text">An application using HTML, CSS, AngularJS, and Edemam API</div>
-        </div>
-
-        <div class="mySlides fade">
-          <div class="numbertext">5 / 5</div>
-          <img class=portfolio
-            title="A site that depicts the name and statistics of many different Transformers Card Game characters"
-            aria-label="A site that depicts the name and statistics of many different Transformers Card Game characters"
-            src="./assets/transformers.PNG">
-          <div class="text">A damage counter web app for a collectible card game using HTML, CSS, JavaScript, AngularJS,
-            node.js</div>
-        </div>
-
-        <!-- Next and previous buttons -->
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
-      </section>
-
-      <!-- The dots/circles -->
-      <div class="slideshow-dot-container">
-        <span class="dot" onclick="currentSlide(1)"></span>
-        <span class="dot" onclick="currentSlide(2)"></span>
-        <span class="dot" onclick="currentSlide(3)"></span>
-        <span class="dot" onclick="currentSlide(4)"></span>
-        <span class="dot" onclick="currentSlide(5)"></span>
-        <span class="dot" onclick="currentSlide(6)"></span>
-        <span class="dot" onclick="currentSlide(7)"></span>
-      </div>
+    <section id="third-section" class="hide">
+      <h1>Heading 3</h1>
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam fugit tempore ab repellendus nulla. Necessitatibus assumenda laboriosam fuga obcaecati quia, eveniet saepe dolor? Fugit nisi quibusdam ducimus officiis nobis et.</p>
     </section>
-
-    <section class="contactsection">
-      <a href="mailto:cameronmcouch@gmail.com">e-mail me</a>
-    </section>
-
-  </section>
+  </div>
+  <footer>
+  </footer>
   <script src="script.js"></script>
 </body>
 
