@@ -22,7 +22,7 @@ smallScreen();
  */
 let sectionWrapper = {
     parent: document.getElementById('section-wrapper'),
-    lastClicked: 0
+    lastClicked: '0'
 }
 
 /***
@@ -51,7 +51,7 @@ const gridLi = document.querySelectorAll("li[class*='nav-li']");
 const updateView = function (evt) {
     const evtType = evt.type;
     const key = evt.type === 'keydown' ? evt.code : '';
-    if (!key && typeof this != undefined && this.value === sectionWrapper.lastClicked) {
+    if (!key && typeof this != undefined && this.value.toString() === sectionWrapper.lastClicked) {
         return;
     }
     evtType === 'click' ? handleViewChangeEvent(this.value) : handleViewChangeEvent(key);
