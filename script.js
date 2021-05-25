@@ -3,7 +3,7 @@ const footer = document.getElementsByTagName('footer')[0];
 const header = document.getElementsByTagName('header')[0];
 
 const smallScreen = function () {
-    if (window.innerHeight <= 850 && window.innerWidth <= 375) {
+    if (window.innerHeight <= 850 && window.innerWidth <= 450) {
         if (footer.childElementCount === 0) {
             footer.appendChild(document.getElementsByTagName('nav')[0]);
         }
@@ -58,7 +58,7 @@ const updateView = function (evt) {
 }
 
 /***
- * @funtction Handles click and keydown events to allow for navigation of the view
+ * @function Handles click and keydown events to allow for navigation of the view
  */
 const handleViewChangeEvent = function (data) {
     // click value comes in as a number, parse it as a string
@@ -123,6 +123,7 @@ const handleViewChangeEvent = function (data) {
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
 gridLi.forEach(item => { item.addEventListener('touchstart', updateView, false); });
+// swipe event
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
     // property keyCode deprecated due to cross-browser inconsistency -- using code here instead
