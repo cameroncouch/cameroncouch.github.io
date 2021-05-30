@@ -8,7 +8,11 @@ const header = document.getElementsByTagName('header')[0];
 let sectionWrapper = {
     parent: document.getElementById('section-wrapper'),
     lastClicked: '0',
-    touch: 0
+    touch: {
+        x: 0,
+        y: 0
+    },
+    scrolled: false
 }
 
 // get all section and li elements with these attributes. We will access these in updateView.
@@ -145,17 +149,23 @@ window.addEventListener(
     false
 );
 window.addEventListener('scroll', () => {
-    let chosenElement;
-    footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
-    setTimeout(() => {
-        chosenElement.classList.remove('scrolled');
-    }, 1000);
+    const chosenElement;
+    if(sectionWrapper.scrolled) {
+        footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
+        setTimeout(() => {
+            chosenElement.classList.remove('scrolled');
+            sectionWrapper.scrolled = false;
+        }, 1000);
+    } else {
+        sectionWrapper.scrolled = true;
+        return;
+    }
 });
 window.addEventListener('touchstart', (evt) => {
-    sectionWrapper.touch = evt.changedTouches[0].clientX;
+    sectionWrapper.touch.x = evt.changedTouches[0].clientX;
+    sectionWrapper.touch.y = evt.changedTouches[0].clientY;
 });
 window.addEventListener('touchend', (evt) => {
-    console.log(evt.changedTouches[0].clientX, sectionWrapper.touch);
     if(evt.changedTouches[0].clientX > sectionWrapper.touch) {
         sectionWrapper['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(sectionWrapper['lastClicked'], 10) + 1)
     } else {
