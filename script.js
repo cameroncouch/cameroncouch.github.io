@@ -7,12 +7,15 @@ const header = document.getElementsByTagName('header')[0];
  */
 let sectionWrapper = {
     parent: document.getElementById('section-wrapper'),
-    lastClicked: '0'
+    lastClicked: '0',
+    touch: 0
 }
 
 // get all section and li elements with these attributes. We will access these in updateView.
 const gridSections = document.querySelectorAll("section[id$='-section']");
 const gridLi = document.querySelectorAll("li[class*='nav-li']");
+const borderClip = document.getElementsByClassName('border-clip')[0];
+const nav = document.getElementsByTagName('nav')[0];
 const slidingBorder = document.getElementById('border-slide');
 
 /***
@@ -34,13 +37,15 @@ const textEquivalents = {
 const smallScreen = function () {
     if (window.innerHeight <= 850 && window.innerWidth <= 450) {
         if (footer.childElementCount === 0) {
-            footer.appendChild(document.getElementsByTagName('nav')[0]);
+            footer.appendChild(borderClip);
             footer.appendChild(slidingBorder);
+            footer.appendChild(nav);
         }
     } else {
         if (header.childElementCount === 0) {
-            header.appendChild(document.getElementsByTagName('nav')[0]);
+            header.appendChild(borderClip);
             header.appendChild(slidingBorder);
+            header.appendChild(nav);
         }
     }
     window.addEventListener('resize', smallScreen, false);
@@ -90,8 +95,8 @@ const handleViewChangeEvent = function (data) {
     switch (data) {
         case '0':
             sectionWrapper.parent.classList.replace(
-                'one-vis',
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`
+                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+                'one-vis'
             );
             gridSections[0].classList.replace('hide', 'visible');
             gridLi[0].classList.remove('desaturate');
@@ -103,8 +108,8 @@ const handleViewChangeEvent = function (data) {
             break;
         case '1':
             sectionWrapper.parent.classList.replace(
-                'two-vis',
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`
+                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+                'two-vis'
             );
             gridSections[1].classList.replace('hide', 'visible');
             gridLi[1].classList.remove('desaturate');
@@ -116,8 +121,8 @@ const handleViewChangeEvent = function (data) {
             break;
         case '2':
             sectionWrapper.parent.classList.replace(
-                'three-vis',
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`
+                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+                'three-vis'
             );
             gridSections[2].classList.replace('hide', 'visible');
             gridLi[2].classList.remove('desaturate');
@@ -131,7 +136,6 @@ const handleViewChangeEvent = function (data) {
 }
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
-gridLi.forEach(item => { item.addEventListener('touchstart', updateView, false); });
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
     // property keyCode deprecated due to cross-browser inconsistency -- using code here instead
@@ -145,5 +149,16 @@ window.addEventListener('scroll', () => {
     footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
     setTimeout(() => {
         chosenElement.classList.remove('scrolled');
-    }, 750);
+    }, 1000);
+});
+window.addEventListener('touchstart', (evt) => {
+    sectionWrapper.touch = evt.changedTouches[0].clientX;
+});
+window.addEventListener('touchend', (evt) => {
+    console.log(evt.changedTouches[0].clientX, sectionWrapper.touch);
+    if(evt.changedTouches[0].clientX > sectionWrapper.touch) {
+        sectionWrapper['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(sectionWrapper['lastClicked'], 10) + 1)
+    } else {
+        sectionWrapper['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(sectionWrapper['lastClicked'], 10) - 1)
+    }
 });

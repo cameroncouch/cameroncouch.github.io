@@ -9,10 +9,6 @@ html, ul, body {
   padding: 0;
 }
 
-html {
-  background: linear-gradient(to bottom right,#FFFFFF, #f8f8f8);
-}
-
 body {
   font-family: Montserrat;
   font-display: swap;
@@ -28,16 +24,17 @@ header {
   transition: top 2s;
 }
 
-.header-clip {
+header .border-clip {
   width: 100%;
   position: absolute;
   height: 4px;
   top: 94%;
-  background: linear-gradient(to right,black, brown, red, yellow, limegreen, green, turquoise, blue, purple, magenta);
+  background-color: rgb(39, 170, 153);
+  background: linear-gradient(to right,rgb(121, 21, 121), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
 }
 
 header.scrolled {
-  top: -20%;
+  top: -25%;
 }
 
 #nav-ul {
@@ -80,42 +77,29 @@ section.hide{
   position: absolute;
   width: 100%;
   height: 40px;
-  border-bottom: 5px solid #FFFFFF;
+  border-bottom: 10px solid #FFFFFF;
   transition: clip-path 500ms;
 }
 
 header #border-slide {
-  top: 26%;
+  top: 17%;
 }
 
 footer #border-slide {
-  bottom: 10%;
+  bottom: 0;
 }
 
-header .behind-one {
-  clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 25% 100%, 25% 50%, 15% 50%, 5% 50%,  0 50%);
+.behind-one {
+  clip-path: polygon(0 0, 5% 0, 10% 0, 15% 0, 20% 0, 33.3% 0, 33.3% 100%, 100% 100%, 100% 0, 33.3% 0%, 20% 0%, 10% 0);
 }
 
-header .behind-two {
-  clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 100% 100%, 75% 100%, 75% 75%, 25% 75%, 25% 100%, 0 100%);
+.behind-two {
+  clip-path: polygon(0 0, 10% 0, 25% 0, 50% 0, 75% 0, 100% 0, 100% 100%, 66.7% 100%, 66.7% 50%, 33.3% 50%, 33.3% 100%, 0 100%);
 }
 
-header .behind-three {
-  clip-path: polygon(0 0, 50% 0, 100% 0, 100% 50%, 75% 50%, 75% 100%, 25% 100%, 15% 100%, 5% 100%, 0 100%);
+.behind-three {
+  clip-path: polygon(100% 0, 75% 0, 66.7% 0, 66.7% 50%, 66.7% 100%, 33.3% 100%, 25% 100%, 10% 100%, 5% 100%, 0 100%, 0 50%, 0 0);
 }
-
-footer .behind-one {
-  left: 0vw;
-}
-
-footer .behind-two {
-  left: 33vw;
-}
-
-footer .behind-three {
-  left: 67vw;
-}
-
 
 .desaturate {
   -webkit-filter: saturate(0);
@@ -133,14 +117,21 @@ footer .behind-three {
 
 footer {
   position: fixed;
-  width: calc(100% - 1px);
-  margin-bottom: 1%;
+  width: 100%;
   bottom: 0;
   display: flex;
   flex-direction: column;
   transition: bottom 2s;
 }
 
+footer .border-clip {
+  width: 100%;
+  position: absolute;
+  height: 4px;
+  bottom: 0;
+  background: linear-gradient(to right,rgb(197, 36, 197), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
+}
+
 footer.scrolled {
-  bottom: 10%;
+  bottom: -20%;
 }
