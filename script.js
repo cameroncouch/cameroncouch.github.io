@@ -174,7 +174,7 @@ window.addEventListener('touchend', (evt) => {
     if(evt.changedTouches[0].clientY >= _state.touch.y || evt.changedTouches[0].clientY <= _state.touch.y) {
         return;
     } 
-    evt.stopImmediatePropagation();
+    // evt.stopImmediatePropagation();
     if(evt.changedTouches[0].clientX > _state.touch.x) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
     } else if(evt.changedTouches[0].clientX < _state.touch.x) {
