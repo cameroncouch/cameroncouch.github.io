@@ -171,10 +171,13 @@ window.addEventListener('touchstart', (evt) => {
 });
 
 window.addEventListener('touchend', (evt) => {
-    if(evt.changedTouches[0].clientY >= _state.touch.y || evt.changedTouches[0].clientY <= _state.touch.y) {
+    let rise = _state.touch.y - evt.changedTouches[0].clientY;
+    let run = _state.touch.x - evt.changedTouches[0].clientX;
+    let slope = rise / run;
+    
+    if(slope >= 1 || slope < 0) {
         return;
-    } 
-    // evt.stopImmediatePropagation();
+    }
     if(evt.changedTouches[0].clientX > _state.touch.x) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
     } else if(evt.changedTouches[0].clientX < _state.touch.x) {
