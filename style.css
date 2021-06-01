@@ -27,7 +27,7 @@ header {
 header .border-clip {
   width: 100%;
   position: absolute;
-  height: 5px;
+  height: 6px;
   top: 94%;
   background-color: rgb(39, 170, 153);
   background: linear-gradient(to right,rgb(121, 21, 121), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
@@ -82,7 +82,7 @@ section.hide{
 }
 
 header #border-slide {
-  top: 17%;
+  top: 20%;
 }
 
 footer #border-slide {
