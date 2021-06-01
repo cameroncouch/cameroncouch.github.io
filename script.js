@@ -171,7 +171,7 @@ window.addEventListener('touchstart', (evt) => {
 });
 
 window.addEventListener('touchend', (evt) => {
-    if(evt.changedTouches[0].clientY > _state.touch.y || evt.changedTouches[0].clientY > _state.touch.y) {
+    if(evt.changedTouches[0].clientY > _state.touch.y || evt.changedTouches[0].clientY < _state.touch.y) {
         return;
     } 
     if(evt.changedTouches[0].clientX > _state.touch.x) {
