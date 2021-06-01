@@ -59,7 +59,6 @@ smallScreen();
  * @function On click of a nav element or left/right arrow press, update the view and lastFocused. If the target of the click is the li tied to the current view, do nothing.
  */
 const updateView = function (evt) {
-    evt.preventDefault();
     const evtType = evt.type;
     const key = evt.type === 'keydown' ? evt.code : '';
     if (!key && typeof this != undefined && this.value.toString() === _state.lastClicked) {
