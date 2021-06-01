@@ -1,11 +1,16 @@
 "use strict";
 const footer = document.getElementsByTagName('footer')[0];
 const header = document.getElementsByTagName('header')[0];
+const gridSections = document.querySelectorAll("section[id$='-section']");
+const gridLi = document.querySelectorAll("li[class*='nav-li']");
+const borderClip = document.getElementsByClassName('border-clip')[0];
+const nav = document.getElementsByTagName('nav')[0];
+const slidingBorder = document.getElementById('border-slide');
 
 /***
- * @object Stores reference to the section parent element, and the last clicked navElement
+ * @object Stores reference to the section parent element, and various pieces of information about the state of the view
  */
-let sectionWrapper = {
+let _state = {
     parent: document.getElementById('section-wrapper'),
     lastClicked: '0',
     touch: {
@@ -15,17 +20,10 @@ let sectionWrapper = {
     scrolled: false
 }
 
-// get all section and li elements with these attributes. We will access these in updateView.
-const gridSections = document.querySelectorAll("section[id$='-section']");
-const gridLi = document.querySelectorAll("li[class*='nav-li']");
-const borderClip = document.getElementsByClassName('border-clip')[0];
-const nav = document.getElementsByTagName('nav')[0];
-const slidingBorder = document.getElementById('border-slide');
-
 /***
- * @constant Zero-indexed items mapped to strings that mimic standard counting. Through 9 / "ten". Eleven would be achieved by concat textEquivalents.9 + textEquivalents.0 
+ * @constant Zero-indexed items mapped to strings that mimic standard counting. Through 9 / "ten". Eleven would be achieved by concat _textEquivalents.9 + _textEquivalents.0 
 */
-const textEquivalents = {
+const _textEquivalents = {
     0: "one",
     1: "two",
     2: "three",
@@ -63,7 +61,7 @@ smallScreen();
 const updateView = function (evt) {
     const evtType = evt.type;
     const key = evt.type === 'keydown' ? evt.code : '';
-    if (!key && typeof this != undefined && this.value.toString() === sectionWrapper.lastClicked) {
+    if (!key && typeof this != undefined && this.value.toString() === _state.lastClicked) {
         return;
     }
     evtType === 'click' ? handleViewChangeEvent(this.value) : handleViewChangeEvent(key);
@@ -76,13 +74,13 @@ const handleViewChangeEvent = function (data) {
     // click value comes in as a number, parse it as a string
     data = typeof data === 'number' ? data.toString() : data;
     if (typeof data === 'string' && data.indexOf('Arrow') > -1) {
-        if (sectionWrapper.lastClicked == '0') {
+        if (_state.lastClicked == '0') {
             if (data === 'ArrowLeft') {
                 data = '2';
             } else if (data === 'ArrowRight') {
                 data = '1';
             }
-        } else if (sectionWrapper.lastClicked == '2') {
+        } else if (_state.lastClicked == '2') {
             if (data === 'ArrowLeft') {
                 data = '1';
             } else if (data === 'ArrowRight') {
@@ -98,48 +96,50 @@ const handleViewChangeEvent = function (data) {
     }
     switch (data) {
         case '0':
-            sectionWrapper.parent.classList.replace(
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+            _state.parent.classList.replace(
+                `${_textEquivalents[_state.lastClicked]}-vis`,
                 'one-vis'
             );
             gridSections[0].classList.replace('hide', 'visible');
             gridLi[0].classList.remove('desaturate');
             gridLi[0].parentElement.classList.replace('shrink', 'grow');
-            gridSections[sectionWrapper.lastClicked].classList.replace('visible', 'hide');
-            gridLi[sectionWrapper.lastClicked].classList.add('desaturate');
-            slidingBorder.classList.replace(`behind-${textEquivalents[sectionWrapper.lastClicked]}`, 'behind-one');
-            sectionWrapper.lastClicked = data;
+            gridSections[_state.lastClicked].classList.replace('visible', 'hide');
+            gridLi[_state.lastClicked].classList.add('desaturate');
+            slidingBorder.classList.replace(`behind-${_textEquivalents[_state.lastClicked]}`, 'behind-one');
+            _state.lastClicked = data;
             break;
         case '1':
-            sectionWrapper.parent.classList.replace(
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+            _state.parent.classList.replace(
+                `${_textEquivalents[_state.lastClicked]}-vis`,
                 'two-vis'
             );
             gridSections[1].classList.replace('hide', 'visible');
             gridLi[1].classList.remove('desaturate');
             gridLi[1].parentElement.classList.replace('shrink', 'grow');
-            gridSections[sectionWrapper.lastClicked].classList.replace('visible', 'hide');
-            gridLi[sectionWrapper.lastClicked].classList.add('desaturate');
-            slidingBorder.classList.replace(`behind-${textEquivalents[sectionWrapper.lastClicked]}`, 'behind-two');
-            sectionWrapper.lastClicked = data;
+            gridSections[_state.lastClicked].classList.replace('visible', 'hide');
+            gridLi[_state.lastClicked].classList.add('desaturate');
+            slidingBorder.classList.replace(`behind-${_textEquivalents[_state.lastClicked]}`, 'behind-two');
+            _state.lastClicked = data;
             break;
         case '2':
-            sectionWrapper.parent.classList.replace(
-                `${textEquivalents[sectionWrapper.lastClicked]}-vis`,
+            _state.parent.classList.replace(
+                `${_textEquivalents[_state.lastClicked]}-vis`,
                 'three-vis'
             );
             gridSections[2].classList.replace('hide', 'visible');
             gridLi[2].classList.remove('desaturate');
             gridLi[2].parentElement.classList.replace('shrink', 'grow');
-            gridSections[sectionWrapper.lastClicked].classList.replace('visible', 'hide');
-            gridLi[sectionWrapper.lastClicked].classList.add('desaturate');
-            slidingBorder.classList.replace(`behind-${textEquivalents[sectionWrapper.lastClicked]}`, 'behind-three');
-            sectionWrapper.lastClicked = data;
+            gridSections[_state.lastClicked].classList.replace('visible', 'hide');
+            gridLi[_state.lastClicked].classList.add('desaturate');
+            slidingBorder.classList.replace(`behind-${_textEquivalents[_state.lastClicked]}`, 'behind-three');
+            _state.lastClicked = data;
             break;
     }
 }
+
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
+
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
     // property keyCode deprecated due to cross-browser inconsistency -- using code here instead
@@ -148,27 +148,31 @@ window.addEventListener(
     (e) => { (e.code === 'ArrowLeft' || e.code === 'ArrowRight') ? updateView(e) : false },
     false
 );
+
+// need to fix scroll and touch events
 window.addEventListener('scroll', () => {
-    const chosenElement;
-    if(sectionWrapper.scrolled) {
+    let chosenElement;
+    if(_state.scrolled) {
         footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
         setTimeout(() => {
             chosenElement.classList.remove('scrolled');
-            sectionWrapper.scrolled = false;
+            _state.scrolled = false;
         }, 1000);
     } else {
-        sectionWrapper.scrolled = true;
+        _state.scrolled = true;
         return;
     }
-});
+}, false);
+
 window.addEventListener('touchstart', (evt) => {
-    sectionWrapper.touch.x = evt.changedTouches[0].clientX;
-    sectionWrapper.touch.y = evt.changedTouches[0].clientY;
+    _state.touch.x = evt.changedTouches[0].clientX;
+    _state.touch.y = evt.changedTouches[0].clientY;
 });
+
 window.addEventListener('touchend', (evt) => {
-    if(evt.changedTouches[0].clientX > sectionWrapper.touch) {
-        sectionWrapper['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(sectionWrapper['lastClicked'], 10) + 1)
-    } else {
-        sectionWrapper['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(sectionWrapper['lastClicked'], 10) - 1)
+    if(evt.changedTouches[0].clientX > _state.touch.x) {
+        _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
+    } else if(evt.changedTouches[0].clientX < _state.touch.x) {
+        _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
 });
