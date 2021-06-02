@@ -170,22 +170,11 @@ window.addEventListener('touchstart', (evt) => {
     _state.touch.y = evt.changedTouches[0].clientY;
 }, false);
 
-window.addEventListener('touchmove', (evt) => {
-    let rise = _state.touch.y - evt.changedTouches[0].clientY;
-    let run = _state.touch.x - evt.changedTouches[0].clientX;
-    let slope = rise / run;
-    
-    if(slope >= 1 || slope < 0) {
-        evt.preventDefault();
-        return;
-    }
-}, {passive: false})
-
 window.addEventListener('touchend', (evt) => {
     let rise = _state.touch.y - evt.changedTouches[0].clientY;
     let run = _state.touch.x - evt.changedTouches[0].clientX;
     let slope = rise / run;
-    console.log(slope);
+
     if(slope >= 1.5 || slope < -1.5) {
         return;
     }
