@@ -151,36 +151,48 @@ window.addEventListener(
 );
 
 // need to fix scroll and touch events
-window.addEventListener('scroll', () => {
-    let chosenElement;
-    if(_state.scrolled) {
-        footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
-        setTimeout(() => {
-            chosenElement.classList.remove('scrolled');
-            _state.scrolled = false;
-        }, 1000);
-    } else {
-        _state.scrolled = true;
-        return;
-    }
-}, false);
+// window.addEventListener('scroll', () => {
+//     let chosenElement;
+//     if(_state.scrolled) {
+//         footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
+//         setTimeout(() => {
+//             chosenElement.classList.remove('scrolled');
+//             _state.scrolled = false;
+//         }, 1000);
+//     } else {
+//         _state.scrolled = true;
+//         return;
+//     }
+// }, false);
 
 window.addEventListener('touchstart', (evt) => {
     _state.touch.x = evt.changedTouches[0].clientX;
     _state.touch.y = evt.changedTouches[0].clientY;
-});
+}, false);
 
-window.addEventListener('touchend', (evt) => {
+window.addEventListener('touchmove', (evt) => {
     let rise = _state.touch.y - evt.changedTouches[0].clientY;
     let run = _state.touch.x - evt.changedTouches[0].clientX;
     let slope = rise / run;
     
     if(slope >= 1 || slope < 0) {
+        evt.preventDefault();
         return;
     }
+}, {passive: false})
+
+window.addEventListener('touchend', (evt) => {
+    let rise = _state.touch.y - evt.changedTouches[0].clientY;
+    let run = _state.touch.x - evt.changedTouches[0].clientX;
+    let slope = rise / run;
+    console.log(slope);
+    if(slope >= 1.5 || slope < -1.5) {
+        return;
+    }
+
     if(evt.changedTouches[0].clientX > _state.touch.x) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
     } else if(evt.changedTouches[0].clientX < _state.touch.x) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
-});
+}, {passive: false});
