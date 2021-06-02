@@ -165,19 +165,29 @@ window.addEventListener(
 //     }
 // }, false);
 
+/* 
+Issues:
+  - Pinch/Zoom is causing "view change"
+  - Two finger interaction is causing issues
+*/
+
 window.addEventListener('touchstart', (evt) => {
+    if(evt.changedTouches.length != 1) {
+        return false;
+    }
     _state.touch.x = evt.changedTouches[0].clientX;
     _state.touch.y = evt.changedTouches[0].clientY;
-}, {passive: true});
+}, true);
 
 window.addEventListener('touchend', (evt) => {
+    if(evt.changedTouches.length != 1) {
+        return false;
+    }
     let rise = _state.touch.y - evt.changedTouches[0].clientY;
     let run = _state.touch.x - evt.changedTouches[0].clientX;
     let slope = rise / run;
 
     if(slope >= 1.5 || slope < -1.5) {
-        evt.preventDefault();
-        evt.stopPropagation();
         return;
     }
 
@@ -186,4 +196,4 @@ window.addEventListener('touchend', (evt) => {
     } else if(evt.changedTouches[0].clientX < _state.touch.x) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
-}, {passive: true});
+}, true);
