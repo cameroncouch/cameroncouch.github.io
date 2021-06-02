@@ -168,7 +168,7 @@ window.addEventListener(
 window.addEventListener('touchstart', (evt) => {
     _state.touch.x = evt.changedTouches[0].clientX;
     _state.touch.y = evt.changedTouches[0].clientY;
-}, false);
+}, {passive: true});
 
 window.addEventListener('touchend', (evt) => {
     let rise = _state.touch.y - evt.changedTouches[0].clientY;
@@ -176,6 +176,8 @@ window.addEventListener('touchend', (evt) => {
     let slope = rise / run;
 
     if(slope >= 1.5 || slope < -1.5) {
+        evt.preventDefault();
+        evt.stopPropagation();
         return;
     }
 
@@ -184,4 +186,4 @@ window.addEventListener('touchend', (evt) => {
     } else if(evt.changedTouches[0].clientX < _state.touch.x) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
-}, {passive: false});
+}, {passive: true});
