@@ -1,6 +1,7 @@
 "use strict";
 const footer = document.getElementsByTagName('footer')[0];
 const header = document.getElementsByTagName('header')[0];
+const sectionParent = document.getElementById('section-wrapper');
 const gridSections = document.querySelectorAll("section[id$='-section']");
 const gridLi = document.querySelectorAll("li[class*='nav-li']");
 const borderClip = document.getElementsByClassName('border-clip')[0];
@@ -11,13 +12,14 @@ const slidingBorder = document.getElementById('border-slide');
  * @object Stores reference to the section parent element, and various pieces of information about the state of the view
  */
 let _state = {
-    parent: document.getElementById('section-wrapper'),
+    parent: sectionParent,
     lastClicked: '0',
     touch: {
         x: 0,
         y: 0
     },
-    scrolled: false
+    scrolled: false,
+    swiping: false
 }
 
 /***
@@ -139,7 +141,6 @@ const handleViewChangeEvent = function (data) {
 
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
-gridLi.forEach(item => { item.addEventListener('touchstart', updateView, false); });
 
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
@@ -150,50 +151,28 @@ window.addEventListener(
     false
 );
 
-// need to fix scroll and touch events
-// window.addEventListener('scroll', () => {
-//     let chosenElement;
-//     if(_state.scrolled) {
-//         footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
-//         setTimeout(() => {
-//             chosenElement.classList.remove('scrolled');
-//             _state.scrolled = false;
-//         }, 1000);
-//     } else {
-//         _state.scrolled = true;
-//         return;
-//     }
-// }, false);
+const hammer = new Hammer(document.body);
 
-/* 
-Issues:
-  - Pinch/Zoom is causing "view change"
-  - Two finger interaction is causing issues
-*/
-
-window.addEventListener('touchstart', (evt) => {
-    if(evt.changedTouches.length != 1) {
-        return false;
-    }
-    _state.touch.x = evt.changedTouches[0].clientX;
-    _state.touch.y = evt.changedTouches[0].clientY;
-}, true);
-
-window.addEventListener('touchend', (evt) => {
-    if(evt.changedTouches.length != 1) {
-        return false;
-    }
-    let rise = _state.touch.y - evt.changedTouches[0].clientY;
-    let run = _state.touch.x - evt.changedTouches[0].clientX;
-    let slope = rise / run;
-
-    if(slope >= 1.5 || slope < -1.5) {
-        return;
-    }
-
-    if(evt.changedTouches[0].clientX > _state.touch.x) {
+hammer.on('swipe', (evt) => {
+    if(evt.direction == 4) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
-    } else if(evt.changedTouches[0].clientX < _state.touch.x) {
+    } else if(evt.direction == 2) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
-}, true);
+})
+
+hammer.on('pan', (evt) => {
+    if(evt.direction % 8 == 0) {
+        let chosenElement;
+        if(_state.scrolled) {
+            footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
+            setTimeout(() => {
+                chosenElement.classList.remove('scrolled');
+                _state.scrolled = false;
+            }, 1000);
+        } else {
+            _state.scrolled = true;
+            return;
+        }
+    }
+});
