@@ -125,6 +125,7 @@ footer {
   display: flex;
   flex-direction: column;
   transition: bottom 2s;
+  background-color: #f7f7f7;
 }
 
 footer .border-clip {
