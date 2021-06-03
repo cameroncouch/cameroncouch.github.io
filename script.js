@@ -154,9 +154,9 @@ window.addEventListener(
 const hammer = new Hammer(document.body);
 
 hammer.on('swipe', (evt) => {
-    if(evt.direction == 4) {
+    if(evt.direction == 2) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1)
-    } else if(evt.direction == 2) {
+    } else if(evt.direction == 4) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1)
     }
 })
