@@ -21,7 +21,7 @@ header {
   flex-direction: column;
   position: fixed;
   background-color: #f7f7f7;
-  box-shadow: #1f1f1f;
+  box-shadow: 0px 1px 5px #1f1f1f;
   top: 0;
   transition: top 2s;
 }
