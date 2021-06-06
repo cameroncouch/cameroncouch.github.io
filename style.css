@@ -31,8 +31,7 @@ header .border-clip {
   position: absolute;
   height: 6px;
   top: 94%;
-  background-color: rgb(39, 170, 153);
-  background: linear-gradient(to right,rgb(121, 21, 121), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
+  background: radial-gradient(to right,rgb(121, 21, 121), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
 }
 
 header.scrolled {
@@ -58,7 +57,6 @@ header.scrolled {
 
 #section-wrapper {
   display: grid;
-  grid-template-rows: 85vh;
   margin: 7% 3%;
 }
 
@@ -78,14 +76,15 @@ section.hide{
 
 #border-slide {
   position: absolute;
-  width: 100%;
+  transform: translateX(-50%);
+  width: 300%;
   height: 40px;
   border-bottom: 10px solid #f7f7f7;
-  transition: clip-path 500ms;
+  transition: left 500ms;
 }
 
 header #border-slide {
-  top: 25%;
+  top: 20%;
 }
 
 footer #border-slide {
@@ -93,15 +92,18 @@ footer #border-slide {
 }
 
 .behind-one {
-  clip-path: polygon(0 0, 5% 0, 10% 0, 15% 0, 20% 0, 33.3% 0, 33.3% 100%, 100% 100%, 100% 0, 33.3% 0%, 20% 0%, 10% 0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%, 60% 50%, 49% 50%, 49% 100%, 0 100%);
+  left: 0;
 }
 
 .behind-two {
-  clip-path: polygon(0 0, 10% 0, 25% 0, 50% 0, 75% 0, 100% 0, 100% 100%, 66.7% 100%, 66.7% 50%, 33.3% 50%, 33.3% 100%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%, 60% 50%, 49% 50%, 49% 100%, 0 100%);
+  left: 36.5%;
 }
 
 .behind-three {
-  clip-path: polygon(100% 0, 75% 0, 66.7% 0, 66.7% 50%, 66.7% 100%, 33.3% 100%, 25% 100%, 10% 100%, 5% 100%, 0 100%, 0 50%, 0 0);
+  clip-path: polygon(0 0, 100% 0, 100% 100%, 60% 100%, 60% 50%, 49% 50%, 49% 100%, 0 100%);
+  left: 70%;
 }
 
 .desaturate {
@@ -135,7 +137,7 @@ footer .border-clip {
   position: absolute;
   height: 4px;
   bottom: 0;
-  background: linear-gradient(to right,rgb(197, 36, 197), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
+  background: linear-gradient(to right,rgb(41, 197, 36), rgb(122, 248, 132), rgb(220, 255, 123), rgb(235, 252, 86));
 }
 
 footer.scrolled {

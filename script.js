@@ -169,7 +169,7 @@ hammer.on('pan', (evt) => {
             setTimeout(() => {
                 chosenElement.classList.remove('scrolled');
                 _state.scrolled = false;
-            }, 1000);
+            }, 750);
         } else {
             _state.scrolled = true;
             return;
