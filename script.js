@@ -1,12 +1,90 @@
 "use strict";
 const footer = document.getElementsByTagName('footer')[0];
 const header = document.getElementsByTagName('header')[0];
+const toggle = document.getElementById('toggle');
 const sectionParent = document.getElementById('section-wrapper');
 const gridSections = document.querySelectorAll("section[id$='-section']");
 const gridLi = document.querySelectorAll("li[class*='nav-li']");
 const borderClip = document.getElementsByClassName('border-clip')[0];
 const nav = document.getElementsByTagName('nav')[0];
 const slidingBorder = document.getElementById('border-slide');
+const dark = document.getElementById('dark');
+const light = document.getElementById('light');
+
+let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if(matched) {
+    toggle.value = 'dark';
+    dark.classList.add('set');
+    toggle.classList.add('night');
+    light.classList.remove('set');
+    toggle.classList.remove('day');
+    document.body.classList.add('night');
+    document.body.classList.add('dark-scheme');
+    header.classList.add('night');
+    header.classList.add('dark-scheme');
+    header.classList.add('nav');
+    footer.classList.add('night');
+    footer.classList.add('dark-scheme');
+    footer.classList.add('nav');
+    slidingBorder.classList.add('night');
+    slidingBorder.classList.add('border');
+} else {
+    dark.classList.remove('set');
+    toggle.classList.remove('night');
+    light.classList.add('set');
+    toggle.classList.add('day');
+    document.body.classList.remove('night');
+    document.body.classList.remove('dark-scheme');
+    header.classList.remove('night');
+    header.classList.remove('dark-scheme');
+    header.classList.remove('nav');
+    footer.classList.remove('night');
+    footer.classList.remove('dark-scheme');
+    footer.classList.remove('nav');
+    slidingBorder.classList.remove('night');
+    slidingBorder.classList.remove('border');
+}
+
+function toggleTheme(evt) {
+    if(evt.target.parentNode.value === 'dark') {
+        toggle.value = 'dark';
+        dark.classList.add('set');
+        toggle.classList.add('night');
+        light.classList.remove('set');
+        toggle.classList.remove('day');
+        document.body.classList.add('night');
+        document.body.classList.add('dark-scheme');
+        header.classList.add('night');
+        header.classList.add('dark-scheme');
+        header.classList.add('nav');
+        footer.classList.add('night');
+        footer.classList.add('dark-scheme');
+        footer.classList.add('nav');
+        slidingBorder.classList.add('night');
+        slidingBorder.classList.add('border');
+    } else {
+        dark.classList.remove('set');
+        toggle.classList.remove('night');
+        light.classList.add('set');
+        toggle.classList.add('day');
+        document.body.classList.remove('night');
+        document.body.classList.remove('dark-scheme');
+        header.classList.remove('night');
+        header.classList.remove('dark-scheme');
+        header.classList.remove('nav');
+        footer.classList.remove('night');
+        footer.classList.remove('dark-scheme');
+        footer.classList.remove('nav');
+        slidingBorder.classList.remove('night');
+        slidingBorder.classList.remove('border');
+    }
+    if(evt.target.parentNode.value === 'light') {
+        evt.target.parentNode.value = 'dark';
+    } else if(evt.target.parentNode.value === 'dark') {
+        evt.target.parentNode.value = 'light';
+    }
+}
 
 /***
  * @object Stores reference to the section parent element, and various pieces of information about the state of the view
@@ -141,6 +219,9 @@ const handleViewChangeEvent = function (data) {
 
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
+
+// theme toggle
+toggle.addEventListener('click', toggleTheme, {captures: true});
 
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
