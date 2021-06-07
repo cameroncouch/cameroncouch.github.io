@@ -47,43 +47,46 @@ if(matched) {
 }
 
 function toggleTheme(evt) {
-    if(evt.target.parentNode.value === 'dark') {
-        toggle.value = 'dark';
-        dark.classList.add('set');
-        toggle.classList.add('night');
-        light.classList.remove('set');
-        toggle.classList.remove('day');
-        document.body.classList.add('night');
-        document.body.classList.add('dark-scheme');
-        header.classList.add('night');
-        header.classList.add('dark-scheme');
-        header.classList.add('nav');
-        footer.classList.add('night');
-        footer.classList.add('dark-scheme');
-        footer.classList.add('nav');
-        slidingBorder.classList.add('night');
-        slidingBorder.classList.add('border');
-    } else {
-        dark.classList.remove('set');
-        toggle.classList.remove('night');
-        light.classList.add('set');
-        toggle.classList.add('day');
-        document.body.classList.remove('night');
-        document.body.classList.remove('dark-scheme');
-        header.classList.remove('night');
-        header.classList.remove('dark-scheme');
-        header.classList.remove('nav');
-        footer.classList.remove('night');
-        footer.classList.remove('dark-scheme');
-        footer.classList.remove('nav');
-        slidingBorder.classList.remove('night');
-        slidingBorder.classList.remove('border');
-    }
-    if(evt.target.parentNode.value === 'light') {
-        evt.target.parentNode.value = 'dark';
-    } else if(evt.target.parentNode.value === 'dark') {
-        evt.target.parentNode.value = 'light';
-    }
+    try{
+
+        if(evt.target.parentNode.value === 'dark') {
+            toggle.value = 'dark';
+            dark.classList.add('set');
+            toggle.classList.add('night');
+            light.classList.remove('set');
+            toggle.classList.remove('day');
+            document.body.classList.add('night');
+            document.body.classList.add('dark-scheme');
+            header.classList.add('night');
+            header.classList.add('dark-scheme');
+            header.classList.add('nav');
+            footer.classList.add('night');
+            footer.classList.add('dark-scheme');
+            footer.classList.add('nav');
+            slidingBorder.classList.add('night');
+            slidingBorder.classList.add('border');
+        } else {
+            dark.classList.remove('set');
+            toggle.classList.remove('night');
+            light.classList.add('set');
+            toggle.classList.add('day');
+            document.body.classList.remove('night');
+            document.body.classList.remove('dark-scheme');
+            header.classList.remove('night');
+            header.classList.remove('dark-scheme');
+            header.classList.remove('nav');
+            footer.classList.remove('night');
+            footer.classList.remove('dark-scheme');
+            footer.classList.remove('nav');
+            slidingBorder.classList.remove('night');
+            slidingBorder.classList.remove('border');
+        }
+        if(evt.target.parentNode.value === 'light') {
+            evt.target.parentNode.value = 'dark';
+        } else if(evt.target.parentNode.value === 'dark') {
+            evt.target.parentNode.value = 'light';
+        }
+    } catch (e) { alert(e); }
 }
 
 /***

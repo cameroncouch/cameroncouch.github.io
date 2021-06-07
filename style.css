@@ -6,9 +6,9 @@ div, li {
 
 @media (prefers-color-scheme: dark) {
   .day.dark-scheme   { background:  #333; color: #fff; }
-  .night.dark-scheme { background: black; color:  #ddd; }
-  .night.border { border-bottom: 10px solid black !important; }
-  .night.nav { box-shadow: 0px 1px 3px #ececec; }
+  .night.dark-scheme { background: #262626; color:  #ddd; }
+  .night.border { border-bottom: 10px solid #0f0f0f !important; }
+  .night.nav { background: #0f0f0f; box-shadow: 0px 1px 3px #ececec; }
   #toggle.night { color: #fff; border: 1px solid #fff; flex-direction: row; }
   #dark.set { background-color: rgb(65, 65, 65); }
 }
@@ -166,7 +166,7 @@ footer .border-clip {
   position: absolute;
   height: 4px;
   bottom: 0;
-  background: linear-gradient(to right,rgb(41, 197, 36), rgb(122, 248, 132), rgb(220, 255, 123), rgb(235, 252, 86));
+  background: linear-gradient(to right,rgb(121, 21, 121), rgb(255, 255, 57), rgb(52, 255, 228), rgb(255, 0, 149));
 }
 
 footer.scrolled {
