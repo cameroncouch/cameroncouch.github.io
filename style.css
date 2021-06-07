@@ -1,7 +1,5 @@
-div, li {
-  --main-bgcolor-primary: blueviolet;
-  --main-bgcolor-secondary: limegreen;
-  --main-bgcolor-tertiary: orange;
+div, section {
+  --main-transition-left: left 500ms;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -29,7 +27,7 @@ body {
   justify-content: space-between;
   flex-direction: row-reverse;
   position: absolute;
-  width: 150px;
+  width: 45px;
   left: -20px;
   background-color: transparent;
   border: 1px solid black;
@@ -92,6 +90,8 @@ header.scrolled {
 section.hide{
   width: 0%;
   position: absolute;
+  left: -100%;
+  transition: var(--main-transition-left);
 }
 
 .hide h1, .hide p {
@@ -101,6 +101,9 @@ section.hide{
 .visible {
   width: 100%;
   display: block;
+  position: absolute;
+  left: 0%;
+  transition: var(--main-transition-left);
 }
 
 #border-slide {
