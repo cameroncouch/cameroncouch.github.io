@@ -32,6 +32,20 @@ body {
   background-color: transparent;
   border: 1px solid black;
   border-radius: 500px;
+  z-index: 5;
+}
+
+#light, #dark {
+  border: none;
+  background-color: transparent;
+}
+
+#light.set {
+  background: #f7f7f7;
+}
+
+.icon {
+  width: 10px;
 }
 
 .set {

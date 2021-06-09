@@ -47,9 +47,9 @@ if(matched) {
 }
 
 function toggleTheme(evt) {
+    console.log(evt.target);
     try{
-
-        if(evt.target.parentNode.value === 'dark') {
+        if(evt.target.parentNode.value === 'light') {
             toggle.value = 'dark';
             dark.classList.add('set');
             toggle.classList.add('night');
@@ -225,6 +225,8 @@ gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
 
 // theme toggle
 toggle.addEventListener('click', toggleTheme, {captures: true});
+light.addEventListener('click', toggleTheme, {bubbles: true});
+dark.addEventListener('click', toggleTheme, {bubbles: true});
 
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
