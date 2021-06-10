@@ -10,6 +10,8 @@ const nav = document.getElementsByTagName('nav')[0];
 const slidingBorder = document.getElementById('border-slide');
 const dark = document.getElementById('dark');
 const light = document.getElementById('light');
+const icon = document.querySelectorAll('.icon');
+console.log(icon)
 
 let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
@@ -47,9 +49,9 @@ if(matched) {
 }
 
 function toggleTheme(evt) {
-    console.log(evt.target);
+    console.log(evt.target.parentNode.parentNode.value);
     try{
-        if(evt.target.parentNode.value === 'light') {
+        if(evt.target.parentNode.parentNode.value === 'dark') {
             toggle.value = 'dark';
             dark.classList.add('set');
             toggle.classList.add('night');
@@ -81,10 +83,10 @@ function toggleTheme(evt) {
             slidingBorder.classList.remove('night');
             slidingBorder.classList.remove('border');
         }
-        if(evt.target.parentNode.value === 'light') {
-            evt.target.parentNode.value = 'dark';
-        } else if(evt.target.parentNode.value === 'dark') {
-            evt.target.parentNode.value = 'light';
+        if(evt.target.parentNode.parentNode.value === 'light') {
+            evt.target.parentNode.parentNode.value = 'dark';
+        } else if(evt.target.parentNode.parentNode.value === 'dark') {
+            evt.target.parentNode.parentNode.value = 'light';
         }
     } catch (e) { alert(e); }
 }
@@ -224,9 +226,7 @@ const handleViewChangeEvent = function (data) {
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
 
 // theme toggle
-toggle.addEventListener('click', toggleTheme, {captures: true});
-light.addEventListener('click', toggleTheme, {bubbles: true});
-dark.addEventListener('click', toggleTheme, {bubbles: true});
+icon.forEach(item => { item.addEventListener('click', toggleTheme, { bubbles: true }) });
 
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(

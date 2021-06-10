@@ -3,12 +3,12 @@ div, section {
 }
 
 @media (prefers-color-scheme: dark) {
-  .day.dark-scheme   { background:  #333; color: #fff; }
   .night.dark-scheme { background: #262626; color:  #ddd; }
   .night.border { border-bottom: 10px solid #0f0f0f !important; }
   .night.nav { background: #0f0f0f; box-shadow: 0px 1px 3px #ececec; }
   #toggle.night { color: #fff; border: 1px solid #fff; flex-direction: row; }
   #dark.set { background-color: rgb(65, 65, 65); }
+  #light { color: #ececec }
 }
 
 html, ul, body {
@@ -25,11 +25,14 @@ body {
 #toggle {
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
   position: absolute;
-  width: 45px;
-  left: -20px;
-  background-color: transparent;
+  width: max-content;
+  height: 30px;
+  bottom: 9%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: black;
+  opacity: .5;
   border: 1px solid black;
   border-radius: 500px;
   z-index: 5;
@@ -38,22 +41,20 @@ body {
 #light, #dark {
   border: none;
   background-color: transparent;
-}
-
-#light.set {
-  background: #f7f7f7;
+  border-radius: 2000%;
 }
 
 .icon {
-  width: 10px;
+  cursor: pointer;
+  width: 20px;
 }
 
-.set {
-  border-radius: 2000%;
-  height: 22px;
-  width: 22px;
-  text-align: center;
-  background-color: rgb(194, 194, 194);
+#dark {
+  color:rgb(65, 65, 65);
+}
+
+#light.set {
+  background-color:rgb(65, 65, 65);
 }
 
 header {
@@ -124,7 +125,7 @@ section.hide{
   position: absolute;
   transform: translateX(-50%);
   width: 300%;
-  height: 40px;
+  height: 70%;
   border-bottom: 10px solid #f7f7f7;
   transition: left 500ms;
 }

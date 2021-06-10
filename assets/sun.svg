@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" stroke-width="3" version="1.1">
+    <!-- top -->
+    <path d="M250 50 L250 125 Z" stroke-width="20" stroke="white"></path>
+    <!-- top right -->
+    <path d="M325 180 L400 100 Z" stroke-width="20" stroke="white"></path>
+    <!-- right -->
+    <path d="M450 250 L375 250 Z" stroke-width="20" stroke="white"></path>
+    <!-- bottom right -->
+    <path d="M325 325 L400 400 Z" stroke-width="20" stroke="white"></path>
+    <!-- bottom -->
+    <path d="M250 450 L250 375 Z" stroke-width="20" stroke="white"></path>
+    <!-- bottom left -->
+    <path d="M175 325 L100 400 Z" stroke-width="20" stroke="white"></path>
+    <!-- left -->
+    <path d="M50 250 L125 250 Z" stroke-width="20" stroke="white"></path>
+    <!-- top left -->
+    <path d="M175 180 L100 100 Z" stroke-width="20" stroke="white"></path>
+    
+    <circle cx="50%" cy="50%" r="75" fill="white" mask="url(#mask)"></circle>
+</svg>
