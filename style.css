@@ -41,7 +41,9 @@ body {
 #light, #dark {
   border: none;
   background-color: transparent;
-  border-radius: 2000%;
+  border-radius: 100px;
+  width: 50%;
+  height: auto;
 }
 
 .icon {
