@@ -22,6 +22,11 @@ body {
   background-color: #f7f7f7;
 }
 
+#nav-svg {
+  width: 100%;
+  position: relative;
+}
+
 #toggle {
   display: flex;
   justify-content: space-between;
