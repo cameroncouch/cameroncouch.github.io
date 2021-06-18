@@ -121,6 +121,11 @@ section.hide{
   display: none;
 }
 
+#content {
+  width: 100%;
+  height: auto;
+}
+
 .visible {
   width: 100%;
   display: block;

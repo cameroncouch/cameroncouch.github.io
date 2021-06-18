@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css?family=Overpass|Montserrat" rel="stylesheet">
   <link rel="icon" type="image/jpg" sizes="64x64" href="./assets/lilcamlogo.jpg">
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/camlogo.jpg">
+  <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   <title>cam couch</title>
 </head>
 
@@ -19,9 +20,9 @@
     <div id="border-slide" class="behind-one"></div>
     <nav>
       <ul id="nav-ul">
-        <li value="0" id="first-li" class="nav-li">ABOUT</li>
-        <li value="1" id="second-li" class="nav-li desaturate">PROJECTS</li>
-        <li value="2" id="third-li" class="nav-li desaturate">OTHER</li>
+        <li value="0" id="first-li" class="nav-li">blog</li>
+        <li value="1" id="second-li" class="nav-li desaturate">projects</li>
+        <li value="2" id="third-li" class="nav-li desaturate">about</li>
       </ul>
     </nav>
   </header>
@@ -31,23 +32,24 @@
   </div>
   <div id="section-wrapper" class="one-vis">
     <section id="first-section" class="visible">
-      <h1>About</h1>
-      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo excepturi. Perspiciatis delectus ipsum alias voluptatum nostrum vitae nulla magni quidem, ex corporis doloremque, neque ab tenetur porro, culpa dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores debitis laboriosam perferendis quod quia qui distinctio assumenda ea placeat sequi, aliquam ut magni delectus facere voluptas hic unde. Odio, consequatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ea itaque nam excepturi facere, atque dolor saepe voluptatibus quibusdam deserunt ipsum placeat delectus qui fugiat veniam quia porro. Nesciunt, magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eum non in fugiat. Ab sit optio quia sunt voluptatum iusto dolorem dolor vero odio, ipsa itaque corrupti et distinctio fugiat! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia numquam, ipsam explicabo facere veritatis iure quis quia eum autem quasi, nostrum saepe molestiae delectus fugit! Alias, omnis. Atque, excepturi corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque harum quis, nihil officia deleniti dolores in, reiciendis nisi amet delectus sequi vel odio veritatis suscipit obcaecati dolor recusandae. Alias, ipsa. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo excepturi. Perspiciatis delectus ipsum alias voluptatum nostrum vitae nulla magni quidem, ex corporis doloremque, neque ab tenetur porro, culpa dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores debitis laboriosam perferendis quod quia qui distinctio assumenda ea placeat sequi, aliquam ut magni delectus facere voluptas hic unde. Odio, consequatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ea itaque nam excepturi facere, atque dolor saepe voluptatibus quibusdam deserunt ipsum placeat delectus qui fugiat veniam quia porro. Nesciunt, magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eum non in fugiat. Ab sit optio quia sunt voluptatum iusto dolorem dolor vero odio, ipsa itaque corrupti et distinctio fugiat! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia numquam, ipsam explicabo facere veritatis iure quis quia eum autem quasi, nostrum saepe molestiae delectus fugit! Alias, omnis. Atque, excepturi corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque harum quis, nihil officia deleniti dolores in, reiciendis nisi amet delectus sequi vel odio veritatis suscipit obcaecati dolor recusandae. Alias, ipsa. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo excepturi. Perspiciatis delectus ipsum alias voluptatum nostrum vitae nulla magni quidem, ex corporis doloremque, neque ab tenetur porro, culpa dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores debitis laboriosam perferendis quod quia qui distinctio assumenda ea placeat sequi, aliquam ut magni delectus facere voluptas hic unde. Odio, consequatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ea itaque nam excepturi facere, atque dolor saepe voluptatibus quibusdam deserunt ipsum placeat delectus qui fugiat veniam quia porro. Nesciunt, magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eum non in fugiat. Ab sit optio quia sunt voluptatum iusto dolorem dolor vero odio, ipsa itaque corrupti et distinctio fugiat! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia numquam, ipsam explicabo facere veritatis iure quis quia eum autem quasi, nostrum saepe molestiae delectus fugit! Alias, omnis. Atque, excepturi corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque harum quis, nihil officia deleniti dolores in, reiciendis nisi amet delectus sequi vel odio veritatis suscipit obcaecati dolor recusandae. Alias, ipsa. Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facere, nemo excepturi. Perspiciatis delectus ipsum alias voluptatum nostrum vitae nulla magni quidem, ex corporis doloremque, neque ab tenetur porro, culpa dolores! Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores debitis laboriosam perferendis quod quia qui distinctio assumenda ea placeat sequi, aliquam ut magni delectus facere voluptas hic unde. Odio, consequatur? Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reprehenderit, ea itaque nam excepturi facere, atque dolor saepe voluptatibus quibusdam deserunt ipsum placeat delectus qui fugiat veniam quia porro. Nesciunt, magni? Lorem ipsum dolor sit amet consectetur adipisicing elit. Delectus eum non in fugiat. Ab sit optio quia sunt voluptatum iusto dolorem dolor vero odio, ipsa itaque corrupti et distinctio fugiat! Lorem ipsum dolor sit amet consectetur, adipisicing elit. Mollitia numquam, ipsam explicabo facere veritatis iure quis quia eum autem quasi, nostrum saepe molestiae delectus fugit! Alias, omnis. Atque, excepturi corrupti! Lorem ipsum dolor sit amet consectetur adipisicing elit. Atque harum quis, nihil officia deleniti dolores in, reiciendis nisi amet delectus sequi vel odio veritatis suscipit obcaecati dolor recusandae. Alias, ipsa.</p>
+      <div id="content"></div>
     </section>
     <section id="second-section" class="hide">
       <h1>Projects</h1>
-      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus vero esse, deserunt, consectetur cumque quam numquam pariatur, culpa officiis doloremque qui consequatur quisquam! Tempora expedita, esse at distinctio obcaecati quaerat. Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla saepe qui eius aut deserunt, fuga ut accusamus, nihil dicta commodi numquam perspiciatis ipsum temporibus eos tempore! Facilis ipsum soluta illo? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nobis beatae molestiae ipsam optio vitae totam maxime eveniet voluptatum, exercitationem odit. Totam architecto enim numquam dolorem! Unde incidunt soluta libero animi? Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure culpa qui architecto enim. Beatae obcaecati, amet ad eum ullam quam esse enim expedita quo id, a aliquid, qui hic suscipit?</p>
+      <p>Service Shelf</p>
+
+      <p>Utility for Transformers: The Trading Card Game</p>
     </section>
     <section id="third-section" class="hide">
-      <h1>Other</h1>
+      <h1>About</h1>
       <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quam fugit tempore ab repellendus nulla. Necessitatibus assumenda laboriosam fuga obcaecati quia, eveniet saepe dolor? Fugit nisi quibusdam ducimus officiis nobis et. Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic minima vitae non dignissimos, est voluptatibus atque corporis optio. Expedita ipsam iste voluptatibus, consequuntur facilis ea. Sed id consequuntur doloribus quas! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati, eius. Vel nemo libero doloribus pariatur quod aperiam amet qui nobis non. Incidunt neque cupiditate atque necessitatibus odio laborum repellendus harum! Lorem ipsum dolor sit amet consectetur adipisicing elit. Et placeat obcaecati commodi quod, adipisci iure laborum nemo nihil autem fugit accusamus molestiae libero eum consectetur dicta quas praesentium laudantium magnam.</p>
     </section>
   </div>
-  <!-- <img id="nav-svg" src="assets/footer.svg"> -->
   <footer>
   </footer>
   <script src="hammer.js"></script>
   <script src="script.js"></script>
+  <script src="articles.js"></script>
 </body>
 
 </html>
