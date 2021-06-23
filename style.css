@@ -146,7 +146,8 @@ section.hide{
 
 #project-tf {
   min-width: 100%;
-  width: 100%;
+  max-width: 100%;
+  width: 100vw;
   height: 375px;
   margin: 0 .25%;
 }
