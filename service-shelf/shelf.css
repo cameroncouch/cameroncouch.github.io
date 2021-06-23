@@ -1,0 +1,68 @@
+/* Mobile first styling */
+
+#shelf {
+    cursor: grab;
+    display: flex;
+    position: relative;
+    align-items: center;
+    width: max-content;
+    padding: 15px 20px;
+    border-radius: 500px;
+    transform-style: preserve-3d;
+}
+
+.hidden-by-user {
+    display: none !important;
+}
+
+#menu-wrapper {
+    display: none;
+}
+
+#left-arrow, #right-arrow, #close, .segment {
+    background: transparent;
+    cursor: pointer;
+    border: none;
+    width: 2em;
+    height: 2em;
+    margin: 0% 2%;
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+     -khtml-user-select: none; /* Konqueror HTML */
+       -moz-user-select: none; /* Old versions of Firefox */
+        -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+}
+#left-arrow {
+    transform: rotate(180deg);
+}
+
+#right-arrow {
+    transform: translateZ(-1em) rotate(-90deg);
+    transition: ease-in-out 250ms;
+    opacity: 0;
+    position: absolute;
+    right: 0;
+    bottom: 15%;
+    z-index: -1;
+    border-radius: 500px;
+    background-color: #181515;
+}
+
+.right-arrow-scrolled {
+    opacity: 1 !important;
+    bottom: 75% !important;
+    transform: translateZ(1em) rotate(-90deg) !important;
+    z-index: 1 !important;
+}
+
+.segment-container, .segment {
+    width: max-content;
+    padding: 0;
+}
+
+.not-last {
+    border-right: 2px solid #000000;
+    padding-right: 5px;
+}

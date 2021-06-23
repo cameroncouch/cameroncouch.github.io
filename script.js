@@ -11,7 +11,6 @@ const slidingBorder = document.getElementById('border-slide');
 const dark = document.getElementById('dark');
 const light = document.getElementById('light');
 const icon = document.querySelectorAll('.icon');
-console.log(icon)
 
 let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 

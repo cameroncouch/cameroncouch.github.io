@@ -121,17 +121,33 @@ section.hide{
   display: none;
 }
 
+.visible {
+  width: 98%;
+  display: block;
+  position: absolute;
+  left: 0%;
+  transition: var(--main-transition-left);
+  margin: 0 .25%;
+}
+
 #content {
   width: 100%;
   height: auto;
 }
 
-.visible {
+#content h1 {
+  padding-bottom: 1%;
+  border-bottom: 2px solid rgb(24, 24, 24);
+}
+
+#second-section h2 {
+  font-size: 1.1em;
+}
+
+#project-tf {
   width: 100%;
-  display: block;
-  position: absolute;
-  left: 0%;
-  transition: var(--main-transition-left);
+  height: 375px;
+  margin: 0 .25%;
 }
 
 #border-slide {
