@@ -12,6 +12,10 @@ $(function () {
                 output += '<h2><a href="' + item.link + '" target="_blank" title="Will open in a new tab">' + item.title + '</h2></a>';
                 output += '<em><p> Published on ' + date.toDateString() + '</p></em>'
                 output += '<p>' + item.description + '</p>';
+                //add a show more/less button 
+                if(k != response.items.length -1) {
+                    output += '<hr>';
+                }
             });
             $content.html(output);
         }

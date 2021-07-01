@@ -6,6 +6,7 @@ div, section {
   .night.dark-scheme { background: #262626; color:  #ddd; }
   .night.border { border-bottom: 10px solid #0f0f0f !important; }
   .night.nav { background: #0f0f0f; box-shadow: 0px 1px 3px #ececec; }
+  a.night { color: #ddd; }
   #toggle.night { color: #fff; border: 1px solid #fff; flex-direction: row; }
   #dark.set { background-color: rgb(65, 65, 65); }
   #light { color: #ececec }
@@ -30,6 +31,7 @@ body {
 #toggle {
   display: flex;
   justify-content: space-between;
+  align-content: center;
   position: fixed;
   width: max-content;
   height: 30px;
@@ -48,7 +50,7 @@ body {
   background-color: transparent;
   border-radius: 100px;
   width: 50%;
-  height: auto;
+  height: 30px;
 }
 
 .icon {
@@ -138,6 +140,12 @@ section.hide{
 #content h1 {
   padding-bottom: 1%;
   border-bottom: 2px solid rgb(24, 24, 24);
+}
+
+#content img {
+  min-width: 60%;
+  max-width: 95%;
+  width: 95%;
 }
 
 #second-section h2 {
