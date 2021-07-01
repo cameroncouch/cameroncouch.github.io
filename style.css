@@ -148,6 +148,11 @@ section.hide{
   width: 95%;
 }
 
+figcaption {
+  font-style: italic;
+  font-size: .75em;
+}
+
 #second-section h2 {
   font-size: 1.1em;
 }
