@@ -9,7 +9,7 @@ $(function () {
             var output = '<h1>' + "Blog" + '</h1>';
             $.each(response.items, function (k, item) {
                 let date = new Date(item.pubDate);
-                output += '<h2><a href="' + item.link + '" target="_blank" title="Will open in a new tab">' + item.title + '</h2></a>';
+                output += '<h2><a href="' + item.link + '" target="_blank" rel="norefferer" title="Will open in a new tab">' + item.title + '</h2></a>';
                 output += '<em><p> Published on ' + date.toDateString() + '</p></em>'
                 output += '<p>' + item.description + '</p>';
                 //add a show more/less button 
