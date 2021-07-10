@@ -23,6 +23,17 @@ body {
   background-color: #f7f7f7;
 }
 
+p {
+  line-height: 1.5em;
+}
+
+p:nth-child(6n) {
+  background-color: rgba(255, 255, 0, 0.767);
+  color: #0a0a0a;
+  font-weight: bold;
+  padding: 5px;
+}
+
 #nav-svg {
   width: 100%;
   position: relative;
@@ -143,14 +154,49 @@ section.hide{
   height: auto;
 }
 
-#content h1 {
-  padding-bottom: 1%;
+
+#content h1, section h1 {
+  padding: 10px 5px;
+  border-radius: 0 10px 0 10px;
+  background-color: #24b39f;
   border-bottom: 2px solid rgb(24, 24, 24);
+  box-shadow: 5px 5px 0 #0a0a0a;
+}
+
+section h2 {
+  background-color: #e91e63;
+  padding: 5px 10px;
+  font-size: 2em;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 5px 5px 0 #0a0a0a;
+}
+
+section h3 {
+  background: #656565;
+  padding: 5px;
+  font-size: 1.25em;
+  box-shadow: 6px 6px 0 black;
+  border-radius: 10px 0 10px 0;
+}
+
+#content h2 {
+  background-color: #8b008b;
+  font-size: 1.75em;
+  padding: 5px 15px;
+  border-radius: 10px 10px 0 0;
+  box-shadow: 8px 8px 0 #0a0a0a;
 }
 
 #content img {
   min-width: 60%;
   max-width: 75%;
+}
+
+#content #avatar {
+  margin-right: 2%;
+  min-width: 2em !important;
+  max-width: 2em !important;
+  border-radius: 50%;
 }
 
 figure {
@@ -162,8 +208,9 @@ figcaption {
   font-size: .75em;
 }
 
-#second-section h2 {
-  font-size: 1.1em;
+#shelf-container {
+  border: 2px dashed;
+  border-radius: 50px;
 }
 
 #project-tf {
@@ -173,6 +220,11 @@ figcaption {
   height: 600px;
   margin: 0 .25%;
 }
+
+/* .bg-span {
+  background-color: #0a0a0a;
+  padding: 2px;
+} */
 
 #border-slide {
   position: absolute;
