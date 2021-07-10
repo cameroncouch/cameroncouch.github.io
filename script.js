@@ -49,7 +49,6 @@ if(matched) {
 }
 
 function toggleTheme(evt) {
-    console.log(evt.target.parentNode.parentNode.value);
     try{
         if(evt.target.parentNode.parentNode.value === 'dark') {
             toggle.value = 'dark';

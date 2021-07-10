@@ -35,22 +35,23 @@ body {
   position: fixed;
   width: max-content;
   height: 30px;
-  bottom: 9%;
+  bottom: 10%;
   left: 50%;
   transform: translateX(-50%);
   background-color: black;
-  opacity: .5;
+  opacity: .9;
   border: 1px solid black;
   border-radius: 500px;
   z-index: 5;
 }
 
 #light, #dark {
+  display: flex;
   border: none;
   background-color: transparent;
   border-radius: 100px;
   width: 50%;
-  height: 30px;
+  align-items: center;
 }
 
 .icon {
@@ -110,6 +111,11 @@ header.scrolled {
 #section-wrapper {
   display: grid;
   margin: 7% 3%;
+}
+
+#first-section, #second-section, #third-section {
+  margin: 0 3.25%;
+  width: 90%;
 }
 
 section.hide{
