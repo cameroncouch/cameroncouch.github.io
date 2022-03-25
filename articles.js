@@ -5,16 +5,15 @@ $(function () {
     };
     $.get('https://api.rss2json.com/v1/api.json', data, function (response) {
         if (response.status == 'ok') {
-            console.log(response);
             var output = '<h1>' + "Blog" + '</h1>';
             $.each(response.items, function (k, item) {
                 let date = new Date(item.pubDate);
-                output += '<h2>' + item.title + '</h2>';
+                output += '<article><h2>' + item.title + '</h2>';
                 output += '<img id="avatar" src="' + response.feed.image + '">'+'<em><span> Published on ' + date.toDateString() + '</span></em>'
                 output += '<p>' + item.description + '</p>';
                 //add a show more/less button 
                 if(k != response.items.length -1) {
-                    output += '<hr>';
+                    output += '</article><hr>';
                 }
             });
             $content.html(output);
