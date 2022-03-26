@@ -17,6 +17,8 @@ $(function () {
                 }
             });
             $content.html(output);
+        } else {
+            var output = '<h1>' + 'Error fetching blog posts' + '</h1>'
         }
     });
 });

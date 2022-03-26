@@ -145,10 +145,10 @@ smallScreen();
 const updateView = function (evt) {
     const evtType = evt.type;
     const key = evt.type === 'keydown' ? evt.code : '';
-    if (!key && typeof this != undefined && this.value.toString() === _state.lastClicked) {
+    if (!key && typeof this != undefined && this.dataset.value.toString() === _state.lastClicked) {
         return;
     }
-    evtType === 'click' ? handleViewChangeEvent(this.value) : handleViewChangeEvent(key);
+    evtType === 'click' || !!key && /Space|Enter/.test(key) ? handleViewChangeEvent(this.dataset.value) : handleViewChangeEvent(key);
 }
 
 /***
@@ -223,9 +223,7 @@ const handleViewChangeEvent = function (data) {
 
 // attach event listeners to the nav
 gridLi.forEach(item => { item.addEventListener('click', updateView, false); });
-
-// theme toggle
-icon.forEach(item => { item.addEventListener('click', toggleTheme, { bubbles: true }) });
+gridLi.forEach(item => { item.addEventListener('keydown', updateView, false); });
 
 // listening for arrow left and right to allow for navigation of the nav elements
 window.addEventListener(
@@ -235,6 +233,10 @@ window.addEventListener(
     (e) => { (e.code === 'ArrowLeft' || e.code === 'ArrowRight') ? updateView(e) : false },
     false
 );
+
+// theme toggle
+icon.forEach(item => { item.addEventListener('click', toggleTheme, { bubbles: true }) });
+
 
 const hammer = new Hammer(document.body);
 

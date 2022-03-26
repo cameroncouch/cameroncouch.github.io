@@ -3,7 +3,7 @@ div, section {
 }
 
 @media (prefers-color-scheme: dark) {
-  .night.dark-scheme { background: #262626; color:  #ddd; }
+  .night.dark-scheme { background: #474747; color:  #ddd; }
   .night.border { border-bottom: 10px solid #0f0f0f !important; }
   .night.nav { background: #0f0f0f; box-shadow: 0px 1px 3px #ececec; }
   a.night { color: #ddd; }
@@ -20,14 +20,14 @@ html, ul, body {
 body {
   font-family: Montserrat;
   font-display: swap;
-  background-color: #f7f7f7;
+  background-color: #eaeaea;
 }
 
 p {
   line-height: 1.5em;
 }
 
-p:nth-child(7n) {
+p:nth-of-type(8n) {
   background-color: rgba(255, 255, 0, 0.767);
   color: #0a0a0a;
   font-weight: bold;
@@ -171,7 +171,7 @@ section.hide{
   writing-mode: vertical-lr;
   position: fixed;
   right: -5px;
-  top: 10%;
+  top: 20%;
 }
 
 .github-link:hover {
