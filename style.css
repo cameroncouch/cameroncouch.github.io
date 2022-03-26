@@ -21,6 +21,7 @@ body {
   font-family: Montserrat;
   font-display: swap;
   background-color: #eaeaea;
+  height: 91vh;
 }
 
 p {
@@ -172,6 +173,7 @@ section.hide{
   position: fixed;
   right: -5px;
   top: 20%;
+  z-index: 2;
 }
 
 .github-link:hover {
