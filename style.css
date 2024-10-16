@@ -179,6 +179,20 @@ section.hide{
   font-weight: 600;
 }
 
+.styled-link {
+  font-weight: 600;
+}
+
+.image-container {
+  text-align: center;
+}
+
+.image-container img {
+  max-width: 100%;
+  height: auto;
+  width: 35%;
+}
+
 section h2 {
   background-color: #1b1b1b;
   color: #f6f6f6;
