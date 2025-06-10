@@ -225,6 +225,14 @@ section h1 {
   width: 35%;
 }
 
+a {
+  color: rgb(51, 201, 201)
+}
+
+a:visited {
+  color: purple;
+}
+
 section h2 {
   background-color: #1b1b1b;
   color: #f6f6f6;
