@@ -15,8 +15,8 @@ const anchors = document.getElementsByTagName('a');
 
 let matched = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if(matched) {
-    toggle.value = 'dark';
+if (matched) {
+    toggle.dataset.value = 'dark';
     dark.classList.add('set');
     toggle.classList.add('night');
     light.classList.remove('set');
@@ -49,45 +49,49 @@ if(matched) {
 }
 
 function toggleTheme(evt) {
-    try{
-        if(evt.target.parentNode.parentNode.value === 'dark') {
-            toggle.value = 'dark';
-            dark.classList.add('set');
-            toggle.classList.add('night');
-            light.classList.remove('set');
-            toggle.classList.remove('day');
-            document.body.classList.add('night');
-            document.body.classList.add('dark-scheme');
-            header.classList.add('night');
-            header.classList.add('dark-scheme');
-            header.classList.add('nav');
-            footer.classList.add('night');
-            footer.classList.add('dark-scheme');
-            footer.classList.add('nav');
-            slidingBorder.classList.add('night');
-            slidingBorder.classList.add('border');
-        } else {
-            dark.classList.remove('set');
-            toggle.classList.remove('night');
-            light.classList.add('set');
-            toggle.classList.add('day');
-            document.body.classList.remove('night');
-            document.body.classList.remove('dark-scheme');
-            header.classList.remove('night');
-            header.classList.remove('dark-scheme');
-            header.classList.remove('nav');
-            footer.classList.remove('night');
-            footer.classList.remove('dark-scheme');
-            footer.classList.remove('nav');
-            slidingBorder.classList.remove('night');
-            slidingBorder.classList.remove('border');
+    try {
+        let themeToggleButton = evt.target.closest("#toggle");
+        if (themeToggleButton) {
+            console.log(themeToggleButton.dataset.value);
+            if (themeToggleButton.dataset.value === 'dark') {
+                toggle.dataset.value = 'dark';
+                dark.classList.add('set');
+                toggle.classList.add('night');
+                light.classList.remove('set');
+                toggle.classList.remove('day');
+                document.body.classList.add('night');
+                document.body.classList.add('dark-scheme');
+                header.classList.add('night');
+                header.classList.add('dark-scheme');
+                header.classList.add('nav');
+                footer.classList.add('night');
+                footer.classList.add('dark-scheme');
+                footer.classList.add('nav');
+                slidingBorder.classList.add('night');
+                slidingBorder.classList.add('border');
+            } else {
+                dark.classList.remove('set');
+                toggle.classList.remove('night');
+                light.classList.add('set');
+                toggle.classList.add('day');
+                document.body.classList.remove('night');
+                document.body.classList.remove('dark-scheme');
+                header.classList.remove('night');
+                header.classList.remove('dark-scheme');
+                header.classList.remove('nav');
+                footer.classList.remove('night');
+                footer.classList.remove('dark-scheme');
+                footer.classList.remove('nav');
+                slidingBorder.classList.remove('night');
+                slidingBorder.classList.remove('border');
+            }
+            if (themeToggleButton.dataset.value === 'light') {
+                themeToggleButton.dataset.value = 'dark';
+            } else if (themeToggleButton.dataset.value === 'dark') {
+                themeToggleButton.dataset.value = 'light';
+            }
         }
-        if(evt.target.parentNode.parentNode.value === 'light') {
-            evt.target.parentNode.parentNode.value = 'dark';
-        } else if(evt.target.parentNode.parentNode.value === 'dark') {
-            evt.target.parentNode.parentNode.value = 'light';
-        }
-    } catch (e) { alert(e); }
+    } catch (e) { console.log(e); }
 }
 
 /***
@@ -241,17 +245,17 @@ icon.forEach(item => { item.addEventListener('click', toggleTheme, { bubbles: tr
 const hammer = new Hammer(document.body);
 
 hammer.on('swipe', (evt) => {
-    if(evt.direction == 2) {
+    if (evt.direction == 2) {
         _state['lastClicked'] === '0' ? handleViewChangeEvent('2') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) - 1);
-    } else if(evt.direction == 4) {
+    } else if (evt.direction == 4) {
         _state['lastClicked'] === '2' ? handleViewChangeEvent('0') : handleViewChangeEvent(parseInt(_state['lastClicked'], 10) + 1);
     }
 })
 
 hammer.on('pan', (evt) => {
-    if(evt.direction % 8 == 0) {
+    if (evt.direction % 8 == 0) {
         let chosenElement;
-        if(_state.scrolled) {
+        if (_state.scrolled) {
             footer.childElementCount > 0 ? (chosenElement = footer, footer.classList.add('scrolled')) : (chosenElement = header, header.classList.add('scrolled'));
             setTimeout(() => {
                 chosenElement.classList.remove('scrolled');

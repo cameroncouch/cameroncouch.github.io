@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="portfolio website web developer bootcamp experience front end">
   <meta http-equiv="content-security-policy"
-    content="default-src 'self' *.googleapis.com *.jquery.com *.rss2json.com; style-src-elem 'self' *.googleapis.com;script-src 'self' *.googleapis *.jquery.com 'unsafe-inline';font-src 'self' *.gstatic.com;img-src 'self' *.medium.com medium.com;frame-src https://transformers-tcg-dmgctr.herokuapp.com;">
+    content="default-src 'self' *.googleapis.com *.jquery.com *.rss2json.com; style-src-elem 'self' *.googleapis.com;script-src 'self' *.googleapis *.jquery.com 'unsafe-inline';font-src 'self' *.gstatic.com;img-src 'self' *.medium.com medium.com;frame-src https://www.youtube.com https://transformers-tcg-dmgctr.herokuapp.com;">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="service-shelf/shelf.css">
@@ -25,23 +25,45 @@
     <div id="border-slide" class="behind-one"></div>
     <nav>
       <ul id="nav-ul">
-        <li data-value="0" tabindex="0" id="first-li" class="nav-li">blog</li>
-        <li data-value="1" tabindex="0" id="second-li" class="nav-li desaturate">projects</li>
+        <li data-value="0" tabindex="0" id="first-li" class="nav-li">cool stuff</li>
+        <li data-value="1" tabindex="0" id="second-li" class="nav-li desaturate">blog</li>
         <li data-value="2" tabindex="0" id="third-li" class="nav-li desaturate">about</li>
       </ul>
     </nav>
   </header>
-  <div id="toggle" value="light">
+  <div id="toggle" data-value="light">
     <button title="toggle light mode" id="light"><img alt="light mode icon" class="icon" src="assets/sun.svg"></button>
     <button title="toggle dark mode" id="dark"><img alt="dark mode icon" class="icon" src="assets/moon.svg"></button>
   </div>
   <div id="section-wrapper" class="one-vis">
     <section id="first-section" class="visible">
-      <div id="content"></div>
-    </section>
-    <section id="second-section" class="hide">
       <a class="github-link" href="https://www.github.com/cameroncouch" target="_blank" tabindex="0">Github</a>
       <h1>Projects</h1>
+      <div>
+        <h2>Thanos Teaches Typing</h2>
+        <h3><span class="bg-span">B</span>uilt using: Unity, C#, Nomad Sculpt, ProCreate</h3>
+        <a href="https://github.com/dvccllc/ldjam-game-50" class="styled-link">Github</a>
+        <p><a href="https://dvccllc.github.io/ldjam-game-50/" class="styled-link">Play Here</a></p>
+        <div class="image-container">
+          <img src="assets/thanos.png" class="block-image" aria-label="screenshot of thanos typing game">
+        </div>
+        <p>A fun weekend project co-developed with my brother for Ludem Dare Game Jam 50 -- with a theme of
+          "Inevitable".</p>
+      </div>
+      <div>
+        <h2>Isometric Platformer Demo</h2>
+        <h3><span class="bg-span">B</span>uilt using: Godot, GDScript, C++, Nomad Sculpt, ProCreate, Aseprite</h3>
+        <div class="image-container">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/0DsiipaqwX8?si=kcOyenBadpBCTW4C"
+            title="YouTube video player" frameborder="0"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+            referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </div>
+        <p>My first step into Godot and C++ after reading Stephen Seth Ulibarri's book on C++. Styled after Super Mario
+          RPG from Squaresoft</p>
+        <p>This was a fun one, as I implemented my own gravity, collision, and fun little tricks like transparency and
+          shadows as the character jumps and moves behind blocks! Also this was when Crabboy was born :-)</p>
+      </div>
       <div>
         <h2>Virtual Pet Kaiju</h2>
         <h3><span class="bg-span">B</span>uilt using: Unity, C#, Nomad Sculpt, ProCreate, Aseprite</h3>
@@ -49,8 +71,10 @@
         <div class="image-container">
           <img src="assets/screen-4.webp" class="block-image" aria-label="screenshot of virtual pet kaiju game">
         </div>
-        <p>A love-letter to Bandai Namco's DigiMon and Tamagotchi virtual pets, but taking the formula to a different place. Co-developed with my brother Dave Vader and a small team of University of Michigan CS students.</p>
-        <p>Role: Game Designer, Game Director, Game Developer, Artist, Animator, Sound Design, Writer, Project Manager, Community Manager, Crowd Funding Manager</p>
+        <p>A love-letter to Bandai Namco's DigiMon and Tamagotchi virtual pets, but taking the formula to a different
+          place. Co-developed with my brother Dave Vader and a small team of University of Michigan CS students.</p>
+        <p>Role: Game Designer, Game Director, Game Developer, Artist, Animator, Sound Design, Writer, Project Manager,
+          Community Manager, Crowd Funding Manager</p>
       </div>
       <div id="project-shelf">
         <h2>Service Shelf</h2>
@@ -64,13 +88,12 @@
           launch each respective widget.</p>
         <p>This gives the user the ability to have a less inhibited browsing experience. This is further enabled by
           enabling the shelf to be draggable to different parts of the viewport.</p>
-        <p>Things to improve: Drag & drop responsiveness, fix bugs, refactor JS.</p>
       </div>
       <div>
         <h2>Utility for Transformers: The Trading Card Game</h2>
         <h3><span class="bg-span">Built using: </span> HTML, CSS, JavaScript, AngularJS, node.js, Express, and
           PostgreSQL DB</h3>
-         <div class="image-container">
+        <div class="image-container">
           <img src="./assets/transformers.png" class="block-image" aria-label="screenshot of transformers web app">
         </div>
         <p>This was a personal project that I built as a skills test during my bootcamp experience, and I tied it into
@@ -81,29 +104,26 @@
           is in the playfield.</p>
         <p>Users are also able to get up-to-date pricing on their collection by using the pricing tool, which is powered
           by the TCG Player REST API.</p>
-        <p>Things to improve: CSS, fix bugs, IndexedDB, refactor JS.</p>
       </div>
+    </section>
+    <section id="second-section" class="hide">
+      <div id="content"></div>
     </section>
     <section id="third-section" class="hide">
       <h1>About Me</h1>
       <section id="my-backgroud">
-        <p>I am a passionate and resourceful person. Like many people I'm sure, I get very focused on something I'm excited about, but I've learned to temper that spark in order to stay engaged for the long term, and not lose sight of other things</p>
-        <h2>Video Games</h2>
-        <p>Video Games have been a huge part of my life since I can remember. Growing up playing hand-me-down Atari, Coleco, and NES, led to me consuming Game FAQs, monthly <em>'zines</em>, and bugging my local FuncoLand during my daily treks home from school. I've shared this passion with my wife, and we play co-op and competitive games as a part of our lazy days in. I've also strengthened the relationship between my 3 brothers and I, as we play co-operative games like Sea of Thieves and Deep Rock Galactic as a way to catch up with one another.</p>
-        <p>One trend in gaming that I'm particularly touched by is the purposeful inclusion of accessibility options in games and game hardware. My dad had a stroke in the 2010's, and has recently been able to find games that allow him to experience the joy of gaming once again.</p>
-        <h2>People</h2>
-        <p>Although I wrote about my family at length, I wasn't always super focused on people. Early in my career I wasn't always able to balance my humanity with my aspirations. After a time, many missteps, and with the right mentors, I was able to find my humanity while still being a high achiever in and out of work hours. I now know that the most important thing is relationships, and through strong relationships you can utilize radical candor to supercharge people's career, solidify trust, and drive results</p>
-        <h2>Career</h2>
-        <p>My career started at 14 years old working part-time at a local Steakhouse, and part-time at GameStop (the old FuncoLand). I earned my associates and bachelors degree while also managing GameStop stores. Some of my most formative experiences were during this time. I learned that I loved connecting with people over Video Games, finding gaming solutions for them (which was especially important before the advent of YouTube), and eventually helping to shape the lives of people and their careers during my time as a leader there. 
-        <p>After giving GameStop a 3-month resignation notice, and saving money, I began driving 2 hours a day to Detroit to attend a Coding Bootcamp, where I would learn the basics of programming and how to build applications using JavaScript.
-        <p>I currently work in the Digital Analytics space, where I lead a team of JavaScript developers in consulting and writing custom solutions for our custommer-base. We work with C-Suite and individual contributors for Fortune 100 - 500 companies to implement our product and develop solutions that meet their needs. As a leader, I find myself again helping to enrich the live's of others. I also have the autonomy to work cross-functionally improve the company, our people, and our customer's experience.</p>
-        <h2>Game Development</h2>
-        My love of Video Games eventually materialized into learning how to code, and co-developing Virtual Pet Kaiju (a love-letter to Bandai Namco's DigiMon / Tamagotchi) with my younger brother and mentor Dave. I worked with a small community to source ideas, crowd-sourced funding for plugins, sound effects / music, 3D models, and ultimately released the game to the Google Play Store. I was able to do project management, game design, graphic design, coding, creative writing, community management, marketing, production and utilize so many skills that were lying untapped. I loved every bit of it.</p>
-        <p>I'm currently developing the successor to VPK, <em>DinoSpar</em>, and I have some very exciting ideas that I hope to share with the world soon!</p>
-        <h2>Summary</h2>
-        <p>As a passionate people leader, developer, family-man, and gamer - I take every opportunity to learn, listen, and improve. I believe there is nothing you can't do, and I believe if you can do, and have the means, you should feel compelled to; not only that, but at the right time you should be lifting others up to acheive and experience the life that they deserve.</p>
-        <br>
-        <br>
+        <p>What truly fuels me is an unwavering passion for doing impactful work, especially when aligned with areas I
+          care deeply about. My lifelong immersion in video games isn't just a hobby; it's a profound influence that
+          taught me the power of engagement, problem-solving, and the joy of shared experiences.</p>
+        <p>This passion led me to pursue and immerse myself in programming and leadership. Currently, I lead a team of
+          JavaScript developers, building bespoke digital analytics solutions for major corporations. My journey, from
+          fostering connections while working in retail at GameStop, to independently developing games, has underscored
+          the importance of pursuing passions and building strong relationships, which have put me on the path to
+          achieving both personal and professional success. I'm always looking for an opportunity to contribute my
+          dedicated work ethic and leadership skills to a company in a vertical where my passion can truly shine, making
+          a tangible difference for both the business and its people.
+          <br>
+          <br>
       </section>
     </section>
   </div>
