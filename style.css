@@ -53,7 +53,6 @@ body {
 
 p {
   line-height: 1.5em;
-  margin: 5px;
 }
 
 p:nth-of-type(8n) {
@@ -254,8 +253,6 @@ h3.double-radius {
 }
 
 .two-up-layout {
-    /* display: flex; */
-    /* justify-content: space-between; */
     max-height: 835px;
     overflow-y: hidden;
     margin-bottom: 10px;
@@ -267,16 +264,18 @@ h3.double-radius {
   width: 45%;
 } */
 
-.left .image-container {
+.left .image-container-inline {
   max-height: max-content;
-  margin: 0px;
+  margin-right: 5px;
   float: left;
+  display: inline;
 }
 
-.right .image-container {
+.right .image-container-inline {
     max-height: max-content;
-  margin: 0px;
+  margin-left: 5px;
   float: right;
+  display: inline;
 }
 
 .split-heading a {
@@ -284,7 +283,7 @@ h3.double-radius {
   padding: 0px 10px;
 }
 
-.image-container img {
+.image-container-inline img {
   width: 45vw;
   height: auto;
 }
