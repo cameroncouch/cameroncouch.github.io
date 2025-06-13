@@ -235,11 +235,11 @@ h3.double-radius {
 }
 
 .project.left h3 {
-    border-radius: 0px 0px 0px 12px;
+  border-radius: 0px 0px 0px 12px;
 }
 
 .project.right h3 {
-    border-radius: 0px 0px 12px 0px;
+  border-radius: 0px 0px 12px 0px;
 }
 
 
@@ -254,11 +254,11 @@ h3.double-radius {
 }
 
 .two-up-layout {
-    /* display: flex; */
-    /* justify-content: space-between; */
-    max-height: 835px;
-    overflow-y: hidden;
-    margin-bottom: 10px;
+  /* display: flex; */
+  /* justify-content: space-between; */
+  max-height: 835px;
+  overflow-y: hidden;
+  margin-bottom: 10px;
 
 }
 
@@ -273,7 +273,7 @@ h3.double-radius {
 }
 
 .right .image-container {
-    max-height: max-content;
+  max-height: max-content;
   margin: 0px;
   float: right;
 }
