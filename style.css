@@ -53,6 +53,7 @@ body {
 
 p {
   line-height: 1.5em;
+  margin: 5px;
 }
 
 p:nth-of-type(8n) {
@@ -253,17 +254,28 @@ h3.double-radius {
 }
 
 .two-up-layout {
-  display: flex;
-  justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
+    max-height: 835px;
+    overflow-y: hidden;
+    margin-bottom: 10px;
+
 }
 
 /* .copy-container {
   width: 45%;
 } */
 
-.image-container {
+.left .image-container {
   max-height: max-content;
   margin: 0px;
+  float: left;
+}
+
+.right .image-container {
+    max-height: max-content;
+  margin: 0px;
+  float: right;
 }
 
 .split-heading a {
