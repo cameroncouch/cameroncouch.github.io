@@ -253,29 +253,17 @@ h3.double-radius {
 }
 
 .two-up-layout {
-    max-height: 835px;
-    overflow-y: hidden;
-    margin-bottom: 10px;
-
+  display: flex;
+  justify-content: space-between;
 }
-
 
 /* .copy-container {
   width: 45%;
 } */
 
-.left .image-container-inline {
+.image-container {
   max-height: max-content;
-  margin-right: 5px;
-  float: left;
-  display: inline;
-}
-
-.right .image-container-inline {
-    max-height: max-content;
-  margin-left: 5px;
-  float: right;
-  display: inline;
+  margin: 0px;
 }
 
 .split-heading a {
@@ -283,7 +271,7 @@ h3.double-radius {
   padding: 0px 10px;
 }
 
-.image-container-inline img {
+.image-container img {
   width: 45vw;
   height: auto;
 }
