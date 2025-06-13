@@ -53,6 +53,7 @@ body {
 
 p {
   line-height: 1.5em;
+  margin: 5px;
 }
 
 p:nth-of-type(8n) {
