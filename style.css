@@ -211,18 +211,74 @@ section h1 {
   font-weight: 600;
 }
 
+.gh-mark {
+  height: 25px;
+}
+
 .styled-link {
   font-weight: 600;
 }
 
+.project.right h2 {
+  text-align: end;
+}
+
+.project h3 {
+  margin: 0;
+  font-size: .9em;
+  background-color: rgb(169, 169, 169);
+}
+
+h3.double-radius {
+  border-radius: 0px 0px 12px 12px !important;
+}
+
+.project.left h3 {
+    border-radius: 0px 0px 0px 12px;
+}
+
+.project.right h3 {
+    border-radius: 0px 0px 12px 0px;
+}
+
+
+.split-heading {
+  background-color: #1b1b1b;
+  display: flex;
+  justify-content: space-between;
+}
+
+.right .split-heading {
+  flex-flow: row-reverse;
+}
+
+.two-up-layout {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* .copy-container {
+  width: 45%;
+} */
+
 .image-container {
-  text-align: center;
+  max-height: max-content;
+  margin: 0px;
+}
+
+.split-heading a {
+  align-content: center;
+  padding: 0px 10px;
 }
 
 .image-container img {
-  max-width: 100%;
+  width: 45vw;
   height: auto;
-  width: 35%;
+}
+
+.image-container iframe {
+  width: 100%;
+  height: 50vh;
 }
 
 a {
@@ -238,6 +294,7 @@ section h2 {
   color: #f6f6f6;
   padding: 5px 10px;
   font-size: 1.5em;
+  margin: 0px;
 }
 
 section h3 {
@@ -276,6 +333,7 @@ figcaption {
 #shelf-container {
   border: 2px dashed;
   border-radius: 50px;
+  margin: 10px 0px;
 }
 
 #project-tf {
@@ -283,10 +341,9 @@ figcaption {
   margin: 0 .25%;
 }
 
-/* .bg-span {
-  background-color: #0a0a0a;
-  padding: 2px;
-} */
+.bg-span {
+  font-weight: 100;
+}
 
 #border-slide {
   position: absolute;
