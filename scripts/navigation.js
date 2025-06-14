@@ -21,8 +21,7 @@ if (matched) {
     toggle.classList.add('night');
     light.classList.remove('set');
     toggle.classList.remove('day');
-    document.body.classList.add('night');
-    document.body.classList.add('dark-scheme');
+    document.body.classList.add('blackout');
     header.classList.add('night');
     header.classList.add('dark-scheme');
     header.classList.add('nav');
@@ -36,8 +35,7 @@ if (matched) {
     toggle.classList.remove('night');
     light.classList.add('set');
     toggle.classList.add('day');
-    document.body.classList.remove('night');
-    document.body.classList.remove('dark-scheme');
+    document.body.classList.remove('blackout');
     header.classList.remove('night');
     header.classList.remove('dark-scheme');
     header.classList.remove('nav');

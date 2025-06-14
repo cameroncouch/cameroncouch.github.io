@@ -4,6 +4,11 @@ section {
 }
 
 @media (prefers-color-scheme: dark) {
+  .blackout {
+    background: #000000;
+    color: #ddd;
+  }
+
   .night.dark-scheme {
     background: #474747;
     color: #ddd;
