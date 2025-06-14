@@ -158,6 +158,7 @@ header.scrolled {
 #third-section {
   margin: 0 3.25%;
   width: 90%;
+  padding-bottom: 60px;
 }
 
 section.hide {
