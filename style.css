@@ -466,3 +466,23 @@ a.night {
 #light {
   color: #ececec
 }
+
+.button-link-container {
+  margin: 10px;
+  text-align: end;
+}
+
+.button-link {
+  text-decoration: none;
+  background: rgb(255, 255, 57);
+  color: black;
+  padding: 8px;
+}
+
+.button-link:hover {
+  font-weight: bold;
+}
+
+.button-link:visited {
+  color: black;
+}
