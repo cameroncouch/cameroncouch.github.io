@@ -6,7 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="portfolio website web developer bootcamp experience front end">
   <meta http-equiv="content-security-policy"
-    content="default-src 'self' *.googleapis.com *.jquery.com *.rss2json.com; style-src-elem 'self' *.googleapis.com;script-src 'self' *.googleapis *.jquery.com 'unsafe-inline';font-src 'self' *.gstatic.com;img-src 'self' *.medium.com medium.com;frame-src https://www.youtube.com https://transformers-tcg-dmgctr.herokuapp.com;">
+    content="default-src 'self' *.googleapis.com *.jquery.com *.rss2json.com; style-src-elem 'self' *.googleapis.com;script-src 'self' *.googleapis *.jquery.com 'unsafe-inline';font-src 'self' *.gstatic.com;img-src 'self' *.medium.com medium.com;frame-src https://www.youtube.com https://youtube.com https://m.youtube.com https://transformers-tcg-dmgctr.herokuapp.com;">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" type="text/css" href="style.css">
   <link rel="stylesheet" type="text/css" href="service-shelf/shelf.css">
@@ -80,29 +80,31 @@
           <p>This was a fun one, as I implemented my own gravity, collision, and fun little tricks like transparency and
             shadows as the character jumps and moves behind blocks! Also this was when Crabboy was born :-)</p>
         </section>
-        <section class="project left">
+        <section class="project">
           <div class="split-heading">
             <h2>gamepad tester</h2>
             <a href="https://github.com/cameroncouch/react-gamepad" target="_blank"><img class="gh-mark"
                 alt="View on GitHub" src="/assets/github-mark-white.png" /></a>
           </div>
-          <div class="two-up-layout">
-            <div class="copy-container">
-              <h3>Built using: <span class="bg-span">React, Typescript, Webpack</span></h3>
-              <p>
-                <span class="image-container">
-                  <img src="assets/controller.png" class="block-image" aria-label="screenshot of gamepad testing app">
-                </span>
-                I wanted to develop a Gamepad tester that I could use without worrying about some nefarious site
-                dropping cookies and localStorage data on my machine! So I made a Gamepad testing application using the
-                Gamepad API!
-              </p>
-              <p>Simply plug in a USB controller (Xbox, Playstation, etc.), press a button, and you can start testing
-              </p>
-              <p>It also supports testing multiple controllers at once!</p>
-              <div class="button-link-container"><a href="/gamepad/index.html" target="_blank" class="button-link">Try
-                  It!</a></div>
-            </div>
+          <div class="copy-container">
+            <h3>Built using: <span class="bg-span">React, Typescript, Webpack</span></h3>
+            <p>
+              <span class="image-container">
+                <iframe src="
+                  https://www.youtube.com/embed/vhqQZXZTSIs" title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+              </span>
+              I wanted to develop a Gamepad tester that I could use without worrying about some nefarious site
+              dropping cookies and localStorage data on my machine! So I made a Gamepad testing application using the
+              Gamepad API!
+            </p>
+            <p>Simply plug in a USB controller (Xbox, Playstation, etc.), press a button, and you can start testing
+            </p>
+            <p>It also supports testing multiple controllers at once!</p>
+            <div class="button-link-container"><a href="/gamepad/index.html" target="_blank" class="button-link">Try
+                It!</a></div>
           </div>
         </section>
         <section class="project">
