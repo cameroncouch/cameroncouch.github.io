@@ -298,7 +298,8 @@ video {
 }
 
 #social-district-img {
-    max-width: 25%;
+    width: 25%;
+    max-width: 150px;
     height: auto;
 }
 
