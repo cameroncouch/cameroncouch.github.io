@@ -1,0 +1,16 @@
+{
+  "name": "tin-tusk",
+  "version": "1.0.0",
+  "description": "tin tusk taqueria website",
+  "main": "index.js",
+  "type":"module",
+  "scripts": {
+    "test": "test"
+  },
+  "author": "cam couch",
+  "license": "ISC",
+  "dependencies": {
+    "gsap": "^3.15.0",
+    "jquery": "^4.0.0"
+  }
+}

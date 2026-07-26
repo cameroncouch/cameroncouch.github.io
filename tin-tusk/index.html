@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Tin Tusks Taqueria is a downtown Howell, Michigan taco window serving fresh street tacos, burritos, bowls, desserts, and more. Stop by in Livingston County for fast, authentic Mexican-inspired food made fresh to order.">
+    <title>Tin Tusks Taqueria</title>
+    <link rel="icon" type="image/x-icon" href="./assets/taco.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Purple+Purse&family=Rye&family=Bowlby+One&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles/styles.css">
+    <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./assets/tin-tusks-icon.webp" alt="Tin Tusks Taqueria Logo" id="logo">
+    </header>
+    <main>
+        <!-- <div id="vid-container" class="mobile-only">
+            <video muted loop id="background-video">
+                <source src="./assets/main.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+        </div> -->
+        <div id="hero">
+            <h1 class="bowlby-one-regular">¡NOW SERVING!</h1>
+        </div>
+        <div id="content">
+            <section id="location" class="section bowlby-one-regular">
+                <h2 class="rye-regular">location</h2>
+                <p>112 S. Walnut St.</p>
+                <p>Howell, MI 48843</p>
+            </section>
+            <section id="hours" class="section alex-brush-regular">
+                <h2>window open</h2>
+                <p>11am - 8pm Mon-Fri</p>
+            </section>
+            <section id="intro" class="section purple-purse-regular">
+                <h1 class="rye-regular">Welcome!</h1>
+                <p><span class="bold">S</span>tep up to the window and enjoy
+                    our delicious tacos and
+                    bowls, and grab an Elephant Ear while you're in Elephant Alley!</p>
+                <p>Located in downtown Howell, Michigan</p>
+            </section>
+            <section id="story" class="section purple-purse-regular">
+                <h2 class="rye-regular">who we are</h2>
+                <p><span class="bold">W</span>e are local business owners
+                    dedicated to providing the best tacos around!</p>
+            </section>
+            <section id="chairs" class="section">
+                <img src="./assets/tusk-chairs2.webp" id="chairs-img" alt="cartoon image of stools for seating" />
+            </section>
+            <section id="menu" class="section bowlby-one-regular">
+                <h2 class="rye-regular">menu</h2>
+                <div class="menu-grid">
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">street tacos</h3>
+                        <div class="menu-group__content">
+                            <p>carne asada $5</p>
+                            <p>marinated chicken $4</p>
+                            <p>chipotle chicken $4</p>
+                            <p>chorizo $4</p>
+                            <p>brussels sprouts $4.5</p>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">Mula</h3>
+                        <div class="menu-group__content">
+                            <p>choice of meat, cheese, cilantro, onion, corn tortilla $5.5</p>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">Bowls</h3>
+                        <div class="menu-group__content">
+                            <p>choice of meat or veggie, rice, beans. $7</p>
+                            <p>rice, beans. add guac for $2</p>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">Salsas</h3>
+                        <div class="menu-group__content">
+                            <p>pico $1.1</p>
+                            <p>verde</p>
+                            <p>red garlic</p>
+                            <p>cherry</p>
+                            <p>cilantro ghost</p>
+                            <p>mango habenero</p>
+                            <p>guacamole $1.1 (2 oz) | $2 (4 oz)</p>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">Elephant Ears</h3>
+                        <div class="menu-group__content">
+                            <p>topped with cinnamon sugar $3</p>
+                            <p>corn dogs $2.25</p>
+                        </div>
+                    </div>
+                    <div class="menu-group menu-group--split">
+                        <h3 class="menu-group__heading bowlby-one-regular">Sides</h3>
+                        <div class="menu-group__content">
+                            <p>chips $3.25</p>
+                            <p>+ salsa $4.35</p>
+                            <p>+ guac $5.1</p>
+                            <p>+ queso $5.1</p>
+                            <p>spanish rice $2.1</p>
+                            <p>beans $2.1</p>
+                            <p>queso $2.1</p>
+                        </div>
+                    </div>
+                    <div class="menu-group menu-group--split">
+                        <h3 class="menu-group__heading bowlby-one-regular">Drinks</h3>
+                        <div class="menu-group__content">
+                            <p>sprite $3.25</p>
+                            <p>jarritos $3.25</p>
+                            <p>mexican coca cola $3.25</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section id="stephanie" class="section purple-purse-regular">
+                <div class="elephants-under">
+                    <h2 class="rye-regular">~ meet Stephanie ~</h2>
+                    <img src="./assets/Stephanie.webp" alt="Stephanie, owner of Tin Tusks Taqueria" id="stephanie-img" />
+                    <div class="image-background white-orange-flowers">
+                        <p class="text-background-light"><span class="bold">S</span>tephanie is the owner of
+                            Tin Tusks Taqueria, and has lived in Howell for her entire life. She is dedicated to providing
+                            high-quality food and exceptional service to her community.</p>
+                    </div>
+                </div> 
+            </section>
+            <section id="faq" class="section indie-flower-regular">
+                <h2 class="rye-regular">FAQ</h2>
+                <p><span class="alex-brush-regular">D</span>o you serve alcohol?</p>
+                <hr>
+                <p><span class="alex-brush-regular">N</span>o, but we have a great selection of non-alcoholic beverages,
+                    and are located in the Howell Social District. Feel free to bring a cerveza or margarita from the
+                    nearby bars!</p>
+                <hr>
+                <p><span class="alex-brush-regular">D</span>o you have seating?</p>
+                <hr>
+                <p><span class="alex-brush-regular">W</span>e have a few stools for seating, but we are primarily a
+                    walk-up window. If we are full up, feel free to grab your food and enjoy it in the nearby or on the
+                    go!</p>
+            </section>
+            <section id="food">
+                <img src="./assets/carne.webp" alt="image of steak taco" id="taco-img" />
+            </section>
+        </div>
+    </main>
+    <footer class="bowlby-one-regular">
+        <p>© 2026 Tin Tusks Taqueria</p>
+        <p>Designedby Cam Couch</p>
+    </footer>
+</body>
+
+</html>
