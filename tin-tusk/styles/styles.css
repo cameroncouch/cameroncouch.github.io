@@ -297,6 +297,11 @@ video {
     color: var(--text-color);
 }
 
+#social-district-img {
+    max-width: 25%;
+    height: auto;
+}
+
 #food img {
     max-width: 100%;
 }
