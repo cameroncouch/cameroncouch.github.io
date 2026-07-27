@@ -153,7 +153,9 @@ video {
 
 #intro,
 #story,
-#location {
+#location,
+#stephanie,
+#faq {
     z-index: 2;
     width: 100%;
 }
@@ -172,8 +174,8 @@ video {
 }
 
 #faq {
-    background-color: var(--primary-black);
-    color: var(--text-color);
+    background-color: var(--primary-white);
+    color: var(--primary-black);
 }
 
 .section h1,
@@ -285,7 +287,9 @@ video {
 
 .elephants-under {
     background-image: url("../assets/white_elephant.webp");
-    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 #stephanie-img {
@@ -295,16 +299,52 @@ video {
 #stephanie h2 {
     background-color: var(--primary-black);
     color: var(--text-color);
+    width: 80%;
 }
 
 #social-district-img {
     width: 25%;
-    max-width: 150px;
+    max-width: 350px;
     height: auto;
 }
 
-#food img {
-    max-width: 100%;
+#social {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+#social-cta-one {
+    align-items: center;
+    background-color: var(--primary-red);
+    color: var(--primary-white);
+    flex: 2;
+}
+
+#fb-container {
+    flex: 1;
+}
+
+.modern-fb-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    background: #ffffff;
+    border-radius: 10px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.modern-fb-container iframe {
+    border-radius: 10px;
+    display: block;
+}
+
+#social-cta-two {
+    align-items: center;
+    background-color: var(--primary-white);
+    color: var(--primary-red);
+    flex: 2;
 }
 
 .image-background.white-green-flowers {
@@ -323,6 +363,7 @@ video {
     padding: 1rem;
     position: relative;
     top: -2rem;
+    width: 80%;
 }
 
 .image-background.red-flowers {
@@ -333,9 +374,9 @@ video {
 }
 
 .text-background-light {
-    background-color: rgba(255, 253, 242, 0.9);
+    background-color: var(--primary-white);
     padding: 1rem;
-    color: #252525;
+    color: var(--primary-black);
     font-weight: bold;
 }
 
@@ -348,6 +389,7 @@ footer {
 }
 
 @media only screen and (max-width: 600px) {
+
     .menu-group,
     .menu-group__content {
         grid-template-columns: 1fr;
@@ -363,9 +405,6 @@ footer {
 
 /* Medium devices (landscape tablets, 768px and up) */
 @media only screen and (min-width: 768px) {
-    .mobile-only {
-        display: inline-block;
-    }
 
     #chairs {
         overflow: hidden;
@@ -382,6 +421,62 @@ footer {
 
     #hero h1 {
         font-size: 5rem;
+    }
+
+    #social {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        width: 100%;
+        background-image: linear-gradient(to top right, var(--primary-black), transparent);
+    }
+
+    #social-cta-one {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        background-color: transparent;
+        background-size: contain;
+        background-image: url("../assets/elephant_pink.webp");
+        background-repeat: no-repeat;
+        background-position: bottom;
+    }
+
+    #social-cta-two {
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        background-color: transparent;
+        background-size: contain;
+        background-image: url("../assets/elephant_pink.webp");
+        background-repeat: no-repeat;
+        background-position: bottom;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
+    }
+
+    #social-cta-one h2 {
+        color: var(--primary-white);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        width: 35%;
+        font-size: 2rem;
+    }
+
+    #social-cta-two h2 {
+        color: var(--primary-white);
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        width: 75%;
+        font-size: 2rem;
+        -moz-transform: scaleX(-1);
+        -o-transform: scaleX(-1);
+        -webkit-transform: scaleX(-1);
+        transform: scaleX(-1);
+        filter: FlipH;
+        -ms-filter: "FlipH";
     }
 }
 
@@ -400,5 +495,5 @@ footer {
 @media only screen and (min-width: 1200px) {
     #content {
         margin-top: 22%;
-    }
+    }s
 }
