@@ -178,6 +178,22 @@ video {
     color: var(--primary-black);
 }
 
+a {
+    text-decoration: none;
+    color: var(--primary-blue);
+}
+
+a:visited {
+    color: var(--primary-blue);
+}
+
+#faq h4 {
+    background-color: var(--primary-black);
+    color: var(--primary-white);
+    margin: 0px;
+    padding: 5px;
+}
+
 .section h1,
 .section h2 {
     background-color: var(--primary-white);
@@ -320,6 +336,14 @@ video {
     background-color: var(--primary-red);
     color: var(--primary-white);
     flex: 2;
+    display: flex;
+    justify-content: center;
+}
+
+#social-cta-one img {
+    height: 10%;
+    width: 20%;
+    margin: 10px;
 }
 
 #fb-container {
@@ -495,5 +519,5 @@ footer {
 @media only screen and (min-width: 1200px) {
     #content {
         margin-top: 22%;
-    }s
+    }
 }
