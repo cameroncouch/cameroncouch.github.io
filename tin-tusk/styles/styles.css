@@ -10,6 +10,12 @@
     --text-color: #fffdf2;
 }
 
+@supports(-webkit-touch-callout: none) {
+    .bg-attachment-fixed {
+        background-attachment: unset;
+    }
+}
+
 html {
     background-image: url("../assets/tin_tusk_storefront.webp");
     background-repeat: no-repeat;
@@ -328,6 +334,11 @@ a:visited {
     flex-direction: column;
     justify-content: space-evenly;
     width: 100%;
+    background-image: url("../assets/tin_tusk_storefront.webp");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: 100%, auto;
 }
 
 #social-cta-one {
