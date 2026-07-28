@@ -16,7 +16,6 @@ html {
     background-position: 0% 0%;
     background-attachment: fixed;
     background-size: 100%, auto;
-    background-color: var(--primary-gray);
 }
 
 body {
@@ -187,13 +186,6 @@ a:visited {
     color: var(--primary-blue);
 }
 
-.section h1,
-.section h2 {
-    background-color: var(--primary-white);
-    color: var(--primary-black);
-    letter-spacing: 0.1em;
-}
-
 #faq h4 {
     background-color: var(--primary-black);
     color: var(--primary-white);
@@ -201,6 +193,12 @@ a:visited {
     padding: 5px;
 }
 
+.section h1,
+.section h2 {
+    background-color: var(--primary-white);
+    color: var(--primary-black);
+    letter-spacing: 0.1em;
+}
 
 .section p span {
     font-weight: bold;
@@ -457,13 +455,16 @@ footer {
 
     #social-cta-one {
         display: flex;
-        align-items: baseline;
         justify-content: center;
         background-color: transparent;
         background-size: contain;
         background-image: url("../assets/elephant_pink.webp");
         background-repeat: no-repeat;
         background-position: bottom;
+    }
+
+    #social-cta-one img {
+        width: 100px;
     }
 
     #social-cta-two {
