@@ -467,6 +467,7 @@ footer {
     #social-cta-one {
         display: flex;
         justify-content: center;
+        align-items: baseline;
         background-color: transparent;
         background-size: contain;
         background-image: url("../assets/elephant_pink.webp");
@@ -476,6 +477,9 @@ footer {
 
     #social-cta-one img {
         width: 100px;
+        position: relative;
+        top: 20px;
+        right: 10px;
     }
 
     #social-cta-two {
@@ -523,7 +527,7 @@ footer {
     }
 
     html {
-        background-position: 0% 25%;
+        background-position: 0% 33%;
     }
 }
 
