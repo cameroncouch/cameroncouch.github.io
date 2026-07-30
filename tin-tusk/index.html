@@ -11,7 +11,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
-        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Purple+Purse&family=Rye&family=Bowlby+One&display=swap"
+        href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Purple+Purse&family=Rye&family=Bowlby+One&family=Alata&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="./styles/styles.css">
 </head>
@@ -35,7 +35,7 @@
                 <h2>window open</h2>
                 <p>11am - 8pm Mon-Fri</p>
             </section>
-            <section id="intro" class="section purple-purse-regular">
+            <section id="intro" class="section alata-regular">
                 <h1 class="rye-regular">Welcome!</h1>
                 <p><span class="bold">S</span>tep up to the window, pull up a stool, and enjoy
                     our delicious tacos. Wash it down with a Mexican Coke, and grab an Elephant Ear while you're in
@@ -45,7 +45,7 @@
             <section id="chairs" class="section">
                 <img src="./assets/tusk-chairs2.webp" id="chairs-img" alt="cartoon image of stools for seating" />
             </section>
-            <section id="menu" class="section bowlby-one-regular">
+            <section id="menu" class="section alata-regular">
                 <h2 class="rye-regular">menu</h2>
                 <div class="menu-grid">
                     <div class="menu-group">
@@ -59,7 +59,7 @@
                         </div>
                     </div>
                     <div class="menu-group">
-                        <h3 class="menu-group__heading bowlby-one-regular">Mulitas</h3>
+                        <h3 class="menu-group__heading bowlby-one-regular">Mulas</h3>
                         <div class="menu-group__content">
                             <p>A stuffed street quesadilla with choice of meat, cheese, cilantro, onion, between corn
                                 tortillas
@@ -70,18 +70,13 @@
                         <h3 class="menu-group__heading bowlby-one-regular">Bowls</h3>
                         <div class="menu-group__content">
                             <p>choice of meat or veggie, rice, beans. $7</p>
-                            <p>rice, beans. add guac for $2</p>
+                            <p>add guac for $2</p>
                         </div>
                     </div>
                     <div class="menu-group">
                         <h3 class="menu-group__heading bowlby-one-regular">Salsas</h3>
                         <div class="menu-group__content">
-                            <p>pico $1.1</p>
-                            <p>verde</p>
-                            <p>red garlic</p>
-                            <p>cherry</p>
-                            <p>cilantro ghost</p>
-                            <p>mango habenero</p>
+                            <p><span class="italic">pico de gallo, verde, red garlic, cherry, cilantro ghost, mango habenero</span> $1.1</p>
                             <p>guacamole $1.1 (2 oz) | $2 (4 oz)</p>
                         </div>
                     </div>
@@ -89,16 +84,21 @@
                         <h3 class="menu-group__heading bowlby-one-regular">Elephant Ears</h3>
                         <div class="menu-group__content">
                             <p>topped with cinnamon sugar $3</p>
-                            <p>corn dogs $2.25</p>
+                        </div>
+                    </div>
+                    <div class="menu-group">
+                        <h3 class="menu-group__heading bowlby-one-regular">Corn Dogs</h3>
+                        <div class="menu-group__content">
+                            <p>crispy fried $2.25</p>
                         </div>
                     </div>
                     <div class="menu-group menu-group--split">
                         <h3 class="menu-group__heading bowlby-one-regular">Sides</h3>
                         <div class="menu-group__content">
                             <p>chips $3.25</p>
-                            <p>+ salsa $4.35</p>
-                            <p>+ guac $5.1</p>
-                            <p>+ queso $5.1</p>
+                            <p class="italic">+ salsa $4.35</p>
+                            <p class="italic">+ guac $5.1</p>
+                            <p class="italic">+ queso $5.1</p>
                             <p>spanish rice $2.1</p>
                             <p>beans $2.1</p>
                             <p>queso $2.1</p>
@@ -114,7 +114,7 @@
                     </div>
                 </div>
             </section>
-            <section id="stephanie" class="section purple-purse-regular">
+            <section id="stephanie" class="section alata-regular">
                 <div class="elephants-under">
                     <h2 class="rye-regular">~ meet Stephanie ~</h2>
                     <img src="./assets/Stephanie.webp" alt="Stephanie, owner of Tin Tusks Taqueria"
@@ -127,11 +127,11 @@
                     </div>
                 </div>
             </section>
-            <section id="story" class="section purple-purse-regular">
+            <section id="story" class="section alata-regular">
                 <h2 class="rye-regular">the legend</h2>
                 <p><span class="bold">O</span>ur taquería draws its name and spirit from local folklore and Elephant Alley, the historic home of our building. But the tribute doesn't stop at the sign. We bring the legend to life with warm, deliciously sweet Elephant Ears made fresh daily.</p>
             </section>
-            <section id="faq" class="section purple-purse-regular">
+            <section id="faq" class="section alata-regular">
                 <h2 class="rye-regular">FAQ</h2>
                 <h4><span class="bold">D</span>o you serve alcohol?</h4>
                 <p><span class="bold">N</span>o, but we have a great selection of non-alcoholic beverages,
@@ -155,8 +155,10 @@
             <section id="social">
                 <div id="social-cta-one" class="bowlby-one-regular">
                     <h2>IN LOVE WITH</h2>
-                    <img src="./assets/tusks_lockup.webp" alt="Tin Tusks logo" />
-                    <h1>?</h1>
+                    <div id="tusk-logo-wrapper">
+                        <img src="./assets/tusks_lockup.webp" alt="Tin Tusks logo" />
+                    </div>
+                    <!-- <h1>?</h1> -->
                 </div>
                 <div class="modern-fb-container">
                     <iframe title="Facebook Page Feed"
@@ -168,6 +170,7 @@
                 </div>
                 <div id="social-cta-two" class="bowlby-one-regular">
                     <h2>TACO 'BOUT IT ON SOCIALS!</h2>
+                    <div id="flipped-elephant"></div>
                 </div>
             </section>
         </div>

@@ -54,8 +54,18 @@ body {
     font-style: normal;
 }
 
+.alata-regular {
+    font-family: "Alata", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
 .bold {
     font-weight: 800;
+}
+
+.italic {
+    font-style: italic;
 }
 
 header {
@@ -206,10 +216,6 @@ a:visited {
     letter-spacing: 0.1em;
 }
 
-.section p span {
-    font-weight: bold;
-}
-
 #elephant-img {
     position: relative;
     height: 250px;
@@ -286,19 +292,27 @@ a:visited {
 
 .menu-group__content {
     grid-column: 1 / -1;
+    columns: 2;
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: repeat(4, auto);
+    grid-auto-flow: column;
     gap: 0.25rem 1rem;
 }
 
 .menu-group__content p {
     margin: 0;
     text-align: left;
+    break-inside: avoid;
 }
 
 .menu-group--split .menu-group__heading,
 .menu-group--split .menu-group__content {
     grid-column: 1 / -1;
+}
+
+.menu-group__content li {
+    list-style-type: none;
 }
 
 #stephanie {
@@ -478,14 +492,30 @@ footer {
     #social-cta-one img {
         width: 100px;
         position: relative;
-        top: 20px;
-        right: 10px;
+        top: 30px;
+        right: -5px;
+        padding: 9px;
+        background-color: var(--primary-red);
+    }
+
+    #tusk-logo-wrapper::after {
+        content: "?";
+        font-size: 2rem;
     }
 
     #social-cta-two {
         display: flex;
         align-items: baseline;
         justify-content: center;
+        align-items: baseline;
+        background-color: transparent;
+        display: flex;
+        flex-direction: column;
+    }
+
+    #flipped-elephant {
+        width: 100%;
+        height: stretch;
         background-color: transparent;
         background-size: contain;
         background-image: url("../assets/elephant_pink.webp");
@@ -502,21 +532,25 @@ footer {
     #social-cta-one h2 {
         color: var(--primary-white);
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        width: 35%;
+        width: 50%;
         font-size: 2rem;
+        position: relative;
+        top: -33px;
+        left: 5px;
+        z-index: 3;
+        transform: skew(7deg, -15deg);
+        background-color: var(--primary-green);
     }
+
 
     #social-cta-two h2 {
         color: var(--primary-white);
         text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
-        width: 75%;
+        width: 100%;
         font-size: 2rem;
-        -moz-transform: scaleX(-1);
-        -o-transform: scaleX(-1);
-        -webkit-transform: scaleX(-1);
-        transform: scaleX(-1);
-        filter: FlipH;
-        -ms-filter: "FlipH";
+        transform: skew(-7deg, 10deg);
+        background-color: var(--primary-orange);
+        z-index: 3;
     }
 }
 
